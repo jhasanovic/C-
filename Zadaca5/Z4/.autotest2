@@ -1,0 +1,191 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 4",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 1: Test virtualne metode nad objektom Automobil\n    {\n        Automobil a(700, {80, 90, 60});\n        ApstraktnoVozilo *v = &a;\n        std::cout << v->DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "930"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 2: Test virtualne metode nad objektom Kamion (AT 3 na Zamger)\n    {\n        Kamion k(700, 2000);\n        ApstraktnoVozilo *v = &k;\n        std::cout << v->DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2700"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 3: Test virtualne metode nad objektom Autobus (AT 5 na Zamger)\n    {\n        Autobus a(1350, 50, 80);\n        ApstraktnoVozilo *v = &a;\n        std::cout << v->DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "5350"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 4: Test ispravnosti surogatske klase Vozilo (AT 12 na Zamger)\n    {\n        Automobil a(700, {80, 90, 60});\n        Kamion k(700, 2000);\n        Vozilo v = a;\n        v = k;\n        std::cout << v.DajUkupnuTezinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "2700"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 5 - Zadatak 4\n\/\/ Odgovorni asistent: Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 4, obratite se na navedeni mail.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 5: Test metoda za ispis (AT 13 na Zamger)\n    {\n        Automobil a(700, {80, 90, 60});\n        Kamion k(700, 2000);\n        Autobus b(700, 80, 50);\n\n        Vozilo v = a;\n        v.IspisiPodatke();\n\n        std::cout << std::endl;\n        v = k;\n        v.IspisiPodatke();\n\n        std::cout << std::endl;\n        v = b;\n        v.IspisiPodatke();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Vrsta vozila: Automobil\nVlastita tezina: 700 kg\nTezine putnika: 80 kg, 90 kg, 60 kg\nUkupna tezina: 930 kg\n\nVrsta vozila: Kamion\nVlastita tezina: 700 kg\nTezine tereta: 2000 kg\nUkupna tezina: 2700 kg\n\nVrsta vozila: Autobus\nVlastita tezina: 700 kg\nBroj putnika: 80\nProsjecna tezina putnika: 50\nUkupna tezina: 4700 kg\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

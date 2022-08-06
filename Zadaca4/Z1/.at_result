@@ -1,0 +1,1616 @@
+{
+    "buildhost_description": {
+        "id": "lab002-c01",
+        "os": "Linux 2.6.32-754.2.1.el6.x86_64 x86_64\n\"CentOS release 6.10 (Final)\"\n"
+    },
+    "tools": {
+        "compile": "g++ (GCC) 6.2.0",
+        "compile[debug]": "g++ (GCC) 6.2.0",
+        "debug": "GNU gdb (GDB) Red Hat Enterprise Linux (7.2-92.el6)",
+        "profile[memcheck]": "valgrind-3.8.1",
+        "profile[sgcheck]": "valgrind-3.8.1"
+    },
+    "status": 4,
+    "test_results": {
+        "2": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((1,2),(3,4),(4,3))\nNove koordinate tjemena: ((4,1),(2,3),(0,0))\nNove koordinate tjemena: ((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektan indeks\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==28481== Memcheck, a memory error detector\n==28481== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28481== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28481== Command: output5PSwas\n==28481==\n====START_TEST_6365====Koordinate tjemena: ((1,2),(3,4),(4,3))\nNove koordinate tjemena: ((4,1),(2,3),(0,0))\nNove koordinate tjemena: ((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektan indeks\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena\n====END_TEST_6365======28481==\n==28481== HEAP SUMMARY:\n==28481==     in use at exit: 72,704 bytes in 1 blocks\n==28481==   total heap usage: 7 allocs, 6 frees, 73,282 bytes allocated\n==28481==\n==28481== LEAK SUMMARY:\n==28481==    definitely lost: 0 bytes in 0 blocks\n==28481==    indirectly lost: 0 bytes in 0 blocks\n==28481==      possibly lost: 0 bytes in 0 blocks\n==28481==    still reachable: 72,704 bytes in 1 blocks\n==28481==         suppressed: 0 bytes in 0 blocks\n==28481== Reachable blocks (those to which a pointer was found) are not shown.\n==28481== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28481==\n==28481== For counts of detected and suppressed errors, rerun with: -v\n==28481== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28484== exp-sgcheck, a stack and global array overrun detector\n==28484== NOTE: This is an Experimental-Class Valgrind Tool\n==28484== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28484== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28484== Command: output5PSwas\n==28484==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28484-- WARNING: Serious error when reading debug info\n--28484-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28484-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_6365====Koordinate tjemena: ((1,2),(3,4),(4,3))\nNove koordinate tjemena: ((4,1),(2,3),(0,0))\nNove koordinate tjemena: ((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektan indeks\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena\n====END_TEST_6365======28484==\n==28484== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "3": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((1,0),(4,2),(3,5))\nStranica i ugao naspram tjemena (1, 0): 3.16228 i 0.602287 radijana.\nStranica i ugao naspram tjemena (4, 2): 5.38516 i 1.83705 radijana.\nStranica i ugao naspram tjemena (3, 5): 3.60555 i 0.702257 radijana.\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28517== Memcheck, a memory error detector\n==28517== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28517== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28517== Command: outputPZfYZX\n==28517==\n====START_TEST_9624====Koordinate tjemena: ((1,0),(4,2),(3,5))\nStranica i ugao naspram tjemena (1, 0): 3.16228 i 0.602287 radijana.\nStranica i ugao naspram tjemena (4, 2): 5.38516 i 1.83705 radijana.\nStranica i ugao naspram tjemena (3, 5): 3.60555 i 0.702257 radijana.\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks\n====END_TEST_9624======28517==\n==28517== HEAP SUMMARY:\n==28517==     in use at exit: 72,704 bytes in 1 blocks\n==28517==   total heap usage: 7 allocs, 6 frees, 73,262 bytes allocated\n==28517==\n==28517== LEAK SUMMARY:\n==28517==    definitely lost: 0 bytes in 0 blocks\n==28517==    indirectly lost: 0 bytes in 0 blocks\n==28517==      possibly lost: 0 bytes in 0 blocks\n==28517==    still reachable: 72,704 bytes in 1 blocks\n==28517==         suppressed: 0 bytes in 0 blocks\n==28517== Reachable blocks (those to which a pointer was found) are not shown.\n==28517== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28517==\n==28517== For counts of detected and suppressed errors, rerun with: -v\n==28517== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 3,
+                    "output": "==28520== exp-sgcheck, a stack and global array overrun detector\n==28520== NOTE: This is an Experimental-Class Valgrind Tool\n==28520== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28520== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28520== Command: outputPZfYZX\n==28520==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28520-- WARNING: Serious error when reading debug info\n--28520-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28520-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_9624====Koordinate tjemena: ((1,0),(4,2),(3,5))\nStranica i ugao naspram tjemena (1, 0): 3.16228 i 0.602287 radijana.\nStranica i ugao naspram tjemena (4, 2): 5.38516 i 1.83705 radijana.\nStranica i ugao naspram tjemena (3, 5): 3.60555 i 0.702257 radijana.\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks\n====END_TEST_9624======28520==\n==28520== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "4": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((0,0),(3,1),(2,5))\nObim trougla: 12.6705\nPovrsina trougla: 6.5",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==28554== Memcheck, a memory error detector\n==28554== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28554== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28554== Command: output3ncqp3\n==28554==\n====START_TEST_10====Koordinate tjemena: ((0,0),(3,1),(2,5))\nObim trougla: 12.6705\nPovrsina trougla: 6.5====END_TEST_10======28554==\n==28554== HEAP SUMMARY:\n==28554==     in use at exit: 72,704 bytes in 1 blocks\n==28554==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==28554==\n==28554== LEAK SUMMARY:\n==28554==    definitely lost: 0 bytes in 0 blocks\n==28554==    indirectly lost: 0 bytes in 0 blocks\n==28554==      possibly lost: 0 bytes in 0 blocks\n==28554==    still reachable: 72,704 bytes in 1 blocks\n==28554==         suppressed: 0 bytes in 0 blocks\n==28554== Reachable blocks (those to which a pointer was found) are not shown.\n==28554== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28554==\n==28554== For counts of detected and suppressed errors, rerun with: -v\n==28554== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28557== exp-sgcheck, a stack and global array overrun detector\n==28557== NOTE: This is an Experimental-Class Valgrind Tool\n==28557== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28557== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28557== Command: output3ncqp3\n==28557==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28557-- WARNING: Serious error when reading debug info\n--28557-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28557-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_10====Koordinate tjemena: ((0,0),(3,1),(2,5))\nObim trougla: 12.6705\nPovrsina trougla: 6.5====END_TEST_10======28557==\n==28557== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "5": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((5,1),(0,-1),(4,0))\nCentar trougla: (3,0)\nVrhovi trougla centriranog u tacki (0,0): ((2,1),(-3,-1),(1,0))",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28590== Memcheck, a memory error detector\n==28590== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28590== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28590== Command: output0kbxuH\n==28590==\n====START_TEST_8626====Koordinate tjemena: ((5,1),(0,-1),(4,0))\nCentar trougla: (3,0)\nVrhovi trougla centriranog u tacki (0,0): ((2,1),(-3,-1),(1,0))====END_TEST_8626======28590==\n==28590== HEAP SUMMARY:\n==28590==     in use at exit: 72,704 bytes in 1 blocks\n==28590==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==28590==\n==28590== LEAK SUMMARY:\n==28590==    definitely lost: 0 bytes in 0 blocks\n==28590==    indirectly lost: 0 bytes in 0 blocks\n==28590==      possibly lost: 0 bytes in 0 blocks\n==28590==    still reachable: 72,704 bytes in 1 blocks\n==28590==         suppressed: 0 bytes in 0 blocks\n==28590== Reachable blocks (those to which a pointer was found) are not shown.\n==28590== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28590==\n==28590== For counts of detected and suppressed errors, rerun with: -v\n==28590== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28593== exp-sgcheck, a stack and global array overrun detector\n==28593== NOTE: This is an Experimental-Class Valgrind Tool\n==28593== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28593== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28593== Command: output0kbxuH\n==28593==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28593-- WARNING: Serious error when reading debug info\n--28593-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28593-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_8626====Koordinate tjemena: ((5,1),(0,-1),(4,0))\nCentar trougla: (3,0)\nVrhovi trougla centriranog u tacki (0,0): ((2,1),(-3,-1),(1,0))====END_TEST_8626======28593==\n==28593== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "6": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:193:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:244:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:244:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:270:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:275:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 0 i delta_y = 0: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 2 i delta_y = 4: ((8,8),(8,12),(3,12))\nTrougao nakon translacije za delta_x = -2 i delta_y = -4: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 1 i delta_y = 2: ((7,6),(7,10),(2,10))\nTrougao nakon rotacije za PI/2 radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tacke (7,6): ((7,6),(11,6),(11,11))\nTrougao nakon rotacije za -PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tezista: ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tezista: ((1.66667,2.66667),(5.66667,2.66667),(5.66667,7.66667))\nTrougao nakon rotacije za -PI radijana oko tezista: ((7,6),(3,6),(3,1))",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28626== Memcheck, a memory error detector\n==28626== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28626== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28626== Command: outputTAu39T\n==28626==\n====START_TEST_4139====Koordinate tjemena: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 0 i delta_y = 0: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 2 i delta_y = 4: ((8,8),(8,12),(3,12))\nTrougao nakon translacije za delta_x = -2 i delta_y = -4: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 1 i delta_y = 2: ((7,6),(7,10),(2,10))\nTrougao nakon rotacije za PI/2 radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tacke (7,6): ((7,6),(11,6),(11,11))\nTrougao nakon rotacije za -PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tezista: ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tezista: ((1.66667,2.66667),(5.66667,2.66667),(5.66667,7.66667))\nTrougao nakon rotacije za -PI radijana oko tezista: ((7,6),(3,6),(3,1))====END_TEST_4139======28626==\n==28626== HEAP SUMMARY:\n==28626==     in use at exit: 72,704 bytes in 1 blocks\n==28626==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==28626==\n==28626== LEAK SUMMARY:\n==28626==    definitely lost: 0 bytes in 0 blocks\n==28626==    indirectly lost: 0 bytes in 0 blocks\n==28626==      possibly lost: 0 bytes in 0 blocks\n==28626==    still reachable: 72,704 bytes in 1 blocks\n==28626==         suppressed: 0 bytes in 0 blocks\n==28626== Reachable blocks (those to which a pointer was found) are not shown.\n==28626== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28626==\n==28626== For counts of detected and suppressed errors, rerun with: -v\n==28626== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 3,
+                    "output": "==28629== exp-sgcheck, a stack and global array overrun detector\n==28629== NOTE: This is an Experimental-Class Valgrind Tool\n==28629== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28629== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28629== Command: outputTAu39T\n==28629==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28629-- WARNING: Serious error when reading debug info\n--28629-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28629-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_4139====Koordinate tjemena: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 0 i delta_y = 0: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 2 i delta_y = 4: ((8,8),(8,12),(3,12))\nTrougao nakon translacije za delta_x = -2 i delta_y = -4: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 1 i delta_y = 2: ((7,6),(7,10),(2,10))\nTrougao nakon rotacije za PI/2 radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tacke (7,6): ((7,6),(11,6),(11,11))\nTrougao nakon rotacije za -PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tezista: ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tezista: ((1.66667,2.66667),(5.66667,2.66667),(5.66667,7.66667))\nTrougao nakon rotacije za -PI radijana oko tezista: ((7,6),(3,6),(3,1))====END_TEST_4139======28629==\n==28629== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "7": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((7,6),(3,6),(3,1))\nTrougao nakon skaliranja sa 2 u odnosu na tacku (7,6): ((7,6),(-1,6),(-1,-4))\nNove koordinate tjemena: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa 2 u odnosu na teziste: ((12,8),(-4,8),(-2,-4))\nTrougao nakon skaliranja sa 0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa -2 u odnosu na teziste: ((-8,0),(8,0),(6,12))\nTrougao nakon skaliranja sa -0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nIzuzetak: Nekorektan faktor skaliranja\nIzuzetak: Nekorektan faktor skaliranja",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==28662== Memcheck, a memory error detector\n==28662== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28662== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28662== Command: outputoBiXjG\n==28662==\n====START_TEST_7486====Koordinate tjemena: ((7,6),(3,6),(3,1))\nTrougao nakon skaliranja sa 2 u odnosu na tacku (7,6): ((7,6),(-1,6),(-1,-4))\nNove koordinate tjemena: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa 2 u odnosu na teziste: ((12,8),(-4,8),(-2,-4))\nTrougao nakon skaliranja sa 0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa -2 u odnosu na teziste: ((-8,0),(8,0),(6,12))\nTrougao nakon skaliranja sa -0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nIzuzetak: Nekorektan faktor skaliranja\nIzuzetak: Nekorektan faktor skaliranja\n====END_TEST_7486======28662==\n==28662== HEAP SUMMARY:\n==28662==     in use at exit: 72,704 bytes in 1 blocks\n==28662==   total heap usage: 5 allocs, 4 frees, 73,098 bytes allocated\n==28662==\n==28662== LEAK SUMMARY:\n==28662==    definitely lost: 0 bytes in 0 blocks\n==28662==    indirectly lost: 0 bytes in 0 blocks\n==28662==      possibly lost: 0 bytes in 0 blocks\n==28662==    still reachable: 72,704 bytes in 1 blocks\n==28662==         suppressed: 0 bytes in 0 blocks\n==28662== Reachable blocks (those to which a pointer was found) are not shown.\n==28662== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28662==\n==28662== For counts of detected and suppressed errors, rerun with: -v\n==28662== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28665== exp-sgcheck, a stack and global array overrun detector\n==28665== NOTE: This is an Experimental-Class Valgrind Tool\n==28665== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28665== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28665== Command: outputoBiXjG\n==28665==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28665-- WARNING: Serious error when reading debug info\n--28665-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28665-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_7486====Koordinate tjemena: ((7,6),(3,6),(3,1))\nTrougao nakon skaliranja sa 2 u odnosu na tacku (7,6): ((7,6),(-1,6),(-1,-4))\nNove koordinate tjemena: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa 2 u odnosu na teziste: ((12,8),(-4,8),(-2,-4))\nTrougao nakon skaliranja sa 0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa -2 u odnosu na teziste: ((-8,0),(8,0),(6,12))\nTrougao nakon skaliranja sa -0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nIzuzetak: Nekorektan faktor skaliranja\nIzuzetak: Nekorektan faktor skaliranja\n====END_TEST_7486======28665==\n==28665== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "8": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Trouglovi: ((1,3),(5,2),(4,4)) i ((5,2),(1,3),(4,4)) NISU identicni.\nNove koordinate tjemena prvog trougla: ((2,4),(6,3),(5,5))\nTrouglovi: ((2,4),(6,3),(5,5)) i ((5,2),(1,3),(4,4)) NISU identicni.",
+                    "duration": 0,
+                    "status": false,
+                    "exit_code": 0,
+                    "success": 6
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28698== Memcheck, a memory error detector\n==28698== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28698== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28698== Command: output0FniR2\n==28698==\n====START_TEST_3698====Trouglovi: ((1,3),(5,2),(4,4)) i ((5,2),(1,3),(4,4)) NISU identicni.\nNove koordinate tjemena prvog trougla: ((2,4),(6,3),(5,5))\nTrouglovi: ((2,4),(6,3),(5,5)) i ((5,2),(1,3),(4,4)) NISU identicni.\n====END_TEST_3698======28698==\n==28698== HEAP SUMMARY:\n==28698==     in use at exit: 72,704 bytes in 1 blocks\n==28698==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==28698==\n==28698== LEAK SUMMARY:\n==28698==    definitely lost: 0 bytes in 0 blocks\n==28698==    indirectly lost: 0 bytes in 0 blocks\n==28698==      possibly lost: 0 bytes in 0 blocks\n==28698==    still reachable: 72,704 bytes in 1 blocks\n==28698==         suppressed: 0 bytes in 0 blocks\n==28698== Reachable blocks (those to which a pointer was found) are not shown.\n==28698== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28698==\n==28698== For counts of detected and suppressed errors, rerun with: -v\n==28698== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28702== exp-sgcheck, a stack and global array overrun detector\n==28702== NOTE: This is an Experimental-Class Valgrind Tool\n==28702== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28702== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28702== Command: output0FniR2\n==28702==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28702-- WARNING: Serious error when reading debug info\n--28702-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28702-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_3698====Trouglovi: ((1,3),(5,2),(4,4)) i ((5,2),(1,3),(4,4)) NISU identicni.\nNove koordinate tjemena prvog trougla: ((2,4),(6,3),(5,5))\nTrouglovi: ((2,4),(6,3),(5,5)) i ((5,2),(1,3),(4,4)) NISU identicni.\n====END_TEST_3698======28702==\n==28702== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "9": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Trouglovi: ((2,1),(6,1),(6,4)) i ((1,3),(1,7),(4,3)) JESU podudarni.\nNove koordinate tjemena prvog trougla: ((1,3),(4,3),(4,7))\nTrouglovi: ((1,3),(4,3),(4,7)) i ((1,3),(1,7),(4,3)) JESU podudarni.",
+                    "duration": 0,
+                    "status": false,
+                    "exit_code": 0,
+                    "success": 6
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==28751== Memcheck, a memory error detector\n==28751== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28751== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28751== Command: outputhRzdoY\n==28751==\n====START_TEST_7853====Trouglovi: ((2,1),(6,1),(6,4)) i ((1,3),(1,7),(4,3)) JESU podudarni.\nNove koordinate tjemena prvog trougla: ((1,3),(4,3),(4,7))\nTrouglovi: ((1,3),(4,3),(4,7)) i ((1,3),(1,7),(4,3)) JESU podudarni.\n====END_TEST_7853======28751==\n==28751== HEAP SUMMARY:\n==28751==     in use at exit: 72,704 bytes in 1 blocks\n==28751==   total heap usage: 13 allocs, 12 frees, 72,928 bytes allocated\n==28751==\n==28751== LEAK SUMMARY:\n==28751==    definitely lost: 0 bytes in 0 blocks\n==28751==    indirectly lost: 0 bytes in 0 blocks\n==28751==      possibly lost: 0 bytes in 0 blocks\n==28751==    still reachable: 72,704 bytes in 1 blocks\n==28751==         suppressed: 0 bytes in 0 blocks\n==28751== Reachable blocks (those to which a pointer was found) are not shown.\n==28751== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28751==\n==28751== For counts of detected and suppressed errors, rerun with: -v\n==28751== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28754== exp-sgcheck, a stack and global array overrun detector\n==28754== NOTE: This is an Experimental-Class Valgrind Tool\n==28754== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28754== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28754== Command: outputhRzdoY\n==28754==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28754-- WARNING: Serious error when reading debug info\n--28754-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28754-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_7853====Trouglovi: ((2,1),(6,1),(6,4)) i ((1,3),(1,7),(4,3)) JESU podudarni.\nNove koordinate tjemena prvog trougla: ((1,3),(4,3),(4,7))\nTrouglovi: ((1,3),(4,3),(4,7)) i ((1,3),(1,7),(4,3)) JESU podudarni.\n====END_TEST_7853======28754==\n==28754== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "10": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Trouglovi: ((0,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) JESU slicni.\nNove koordinate tjemena prvog trougla: ((1,0),(1,3),(3,0))\nTrouglovi: ((1,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) NISU slicni.",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28787== Memcheck, a memory error detector\n==28787== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28787== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28787== Command: outputgw8rGt\n==28787==\n====START_TEST_6047====Trouglovi: ((0,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) JESU slicni.\nNove koordinate tjemena prvog trougla: ((1,0),(1,3),(3,0))\nTrouglovi: ((1,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) NISU slicni.\n====END_TEST_6047======28787==\n==28787== HEAP SUMMARY:\n==28787==     in use at exit: 72,704 bytes in 1 blocks\n==28787==   total heap usage: 13 allocs, 12 frees, 72,928 bytes allocated\n==28787==\n==28787== LEAK SUMMARY:\n==28787==    definitely lost: 0 bytes in 0 blocks\n==28787==    indirectly lost: 0 bytes in 0 blocks\n==28787==      possibly lost: 0 bytes in 0 blocks\n==28787==    still reachable: 72,704 bytes in 1 blocks\n==28787==         suppressed: 0 bytes in 0 blocks\n==28787== Reachable blocks (those to which a pointer was found) are not shown.\n==28787== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28787==\n==28787== For counts of detected and suppressed errors, rerun with: -v\n==28787== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28790== exp-sgcheck, a stack and global array overrun detector\n==28790== NOTE: This is an Experimental-Class Valgrind Tool\n==28790== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28790== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28790== Command: outputgw8rGt\n==28790==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28790-- WARNING: Serious error when reading debug info\n--28790-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28790-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_6047====Trouglovi: ((0,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) JESU slicni.\nNove koordinate tjemena prvog trougla: ((1,0),(1,3),(3,0))\nTrouglovi: ((1,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) NISU slicni.\n====END_TEST_6047======28790==\n==28790== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "11": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:192:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:243:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:269:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Koordinate tjemena: ((-1,2),(4,0),(2,-2))\nTacka (2,0) je UNUTAR trougla.\nTacka (-1,0) je VAN trougla.\nTacka (3,0) je UNUTAR trougla.\nTacka (0.5,0.5) je UNUTAR trougla.\nTacka (0,1) je UNUTAR trougla.\nTacka (0,4) je VAN trougla.\nTacka (1,5) je VAN trougla.\nTacka (2,6) je VAN trougla.\nTacka (0,-1) je VAN trougla.\nTacka (5,0) je VAN trougla.",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==28823== Memcheck, a memory error detector\n==28823== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28823== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28823== Command: output1gBcry\n==28823==\n====START_TEST_274====Koordinate tjemena: ((-1,2),(4,0),(2,-2))\nTacka (2,0) je UNUTAR trougla.\nTacka (-1,0) je VAN trougla.\nTacka (3,0) je UNUTAR trougla.\nTacka (0.5,0.5) je UNUTAR trougla.\nTacka (0,1) je UNUTAR trougla.\nTacka (0,4) je VAN trougla.\nTacka (1,5) je VAN trougla.\nTacka (2,6) je VAN trougla.\nTacka (0,-1) je VAN trougla.\nTacka (5,0) je VAN trougla.\n====END_TEST_274======28823==\n==28823== HEAP SUMMARY:\n==28823==     in use at exit: 72,704 bytes in 1 blocks\n==28823==   total heap usage: 1 allocs, 0 frees, 72,704 bytes allocated\n==28823==\n==28823== LEAK SUMMARY:\n==28823==    definitely lost: 0 bytes in 0 blocks\n==28823==    indirectly lost: 0 bytes in 0 blocks\n==28823==      possibly lost: 0 bytes in 0 blocks\n==28823==    still reachable: 72,704 bytes in 1 blocks\n==28823==         suppressed: 0 bytes in 0 blocks\n==28823== Reachable blocks (those to which a pointer was found) are not shown.\n==28823== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28823==\n==28823== For counts of detected and suppressed errors, rerun with: -v\n==28823== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28826== exp-sgcheck, a stack and global array overrun detector\n==28826== NOTE: This is an Experimental-Class Valgrind Tool\n==28826== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28826== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28826== Command: output1gBcry\n==28826==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28826-- WARNING: Serious error when reading debug info\n--28826-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28826-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_274====Koordinate tjemena: ((-1,2),(4,0),(2,-2))\nTacka (2,0) je UNUTAR trougla.\nTacka (-1,0) je VAN trougla.\nTacka (3,0) je UNUTAR trougla.\nTacka (0.5,0.5) je UNUTAR trougla.\nTacka (0,1) je UNUTAR trougla.\nTacka (0,4) je VAN trougla.\nTacka (1,5) je VAN trougla.\nTacka (2,6) je VAN trougla.\nTacka (0,-1) je VAN trougla.\nTacka (5,0) je VAN trougla.\n====END_TEST_274======28826==\n==28826== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "12": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trokut::Skaliraj(Tacka, double)’:\nmain.cpp:194:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trokut, Trokut)’:\nmain.cpp:245:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:245:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trokut, Trokut)’:\nmain.cpp:271:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:273:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:274:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:275:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:276:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Trougao ((4,4),(1,3),(5,2)) je POZITIVNO orijentiran.\nTrougao ((4,4),(5,2),(1,3)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(1,3),(4,4)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(4,4),(1,3)) je POZITIVNO orijentiran.\nTrougao ((1,3),(4,4),(5,2)) je NEGATIVNO orijentiran.\nTrougao ((1,3),(5,2),(4,4)) je POZITIVNO orijentiran.",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28859== Memcheck, a memory error detector\n==28859== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28859== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28859== Command: outputOrRmoc\n==28859==\n====START_TEST_9427====Trougao ((4,4),(1,3),(5,2)) je POZITIVNO orijentiran.\nTrougao ((4,4),(5,2),(1,3)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(1,3),(4,4)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(4,4),(1,3)) je POZITIVNO orijentiran.\nTrougao ((1,3),(4,4),(5,2)) je NEGATIVNO orijentiran.\nTrougao ((1,3),(5,2),(4,4)) je POZITIVNO orijentiran.\n====END_TEST_9427======28859==\n==28859== HEAP SUMMARY:\n==28859==     in use at exit: 72,704 bytes in 1 blocks\n==28859==   total heap usage: 2 allocs, 1 frees, 72,752 bytes allocated\n==28859==\n==28859== LEAK SUMMARY:\n==28859==    definitely lost: 0 bytes in 0 blocks\n==28859==    indirectly lost: 0 bytes in 0 blocks\n==28859==      possibly lost: 0 bytes in 0 blocks\n==28859==    still reachable: 72,704 bytes in 1 blocks\n==28859==         suppressed: 0 bytes in 0 blocks\n==28859== Reachable blocks (those to which a pointer was found) are not shown.\n==28859== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28859==\n==28859== For counts of detected and suppressed errors, rerun with: -v\n==28859== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28862== exp-sgcheck, a stack and global array overrun detector\n==28862== NOTE: This is an Experimental-Class Valgrind Tool\n==28862== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28862== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28862== Command: outputOrRmoc\n==28862==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28862-- WARNING: Serious error when reading debug info\n--28862-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28862-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_9427====Trougao ((4,4),(1,3),(5,2)) je POZITIVNO orijentiran.\nTrougao ((4,4),(5,2),(1,3)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(1,3),(4,4)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(4,4),(1,3)) je POZITIVNO orijentiran.\nTrougao ((1,3),(4,4),(5,2)) je NEGATIVNO orijentiran.\nTrougao ((1,3),(5,2),(4,4)) je POZITIVNO orijentiran.\n====END_TEST_9427======28862==\n==28862== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "13": {
+            "success": true,
+            "status": 1,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "main.cpp: In member function ‘void Trougao::Skaliraj(Tacka, double)’:\nmain.cpp:190:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trougao, Trougao)’:\nmain.cpp:241:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:241:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trougao, Trougao)’:\nmain.cpp:267:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:268:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:269:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Nekorektne pozicije tjemena, ponovite unos!\nUnesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: \nTrouglovi prije transformacija:\n((1,3),(5,2),(7,1))\n((1,6),(3,4),(7,9))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja: \nTrouglovi nakon transformacija i sortiranja:\n((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n((3.50635,3.90931),(17.3241,6.921),(7.09336,37.258))\n\nVrhovi trougla sa najmanjim obimom: ((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n\nNema identicnih trouglova!\n\nNema podudarnih trouglova!\n\nNema slicnih trouglova!",
+                    "duration": 0,
+                    "status": 1,
+                    "exit_code": 0,
+                    "success": true
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "==28903== Memcheck, a memory error detector\n==28903== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28903== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28903== Command: outputlVMYDp\n==28903==\n====START_TEST_3881====Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Nekorektne pozicije tjemena, ponovite unos!\nUnesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]:\nTrouglovi prije transformacija:\n((1,3),(5,2),(7,1))\n((1,6),(3,4),(7,9))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja:\nTrouglovi nakon transformacija i sortiranja:\n((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n((3.50635,3.90931),(17.3241,6.921),(7.09336,37.258))\n\nVrhovi trougla sa najmanjim obimom: ((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n\nNema identicnih trouglova!\n\nNema podudarnih trouglova!\n\nNema slicnih trouglova!\n\n====END_TEST_3881======28903==\n==28903== HEAP SUMMARY:\n==28903==     in use at exit: 72,704 bytes in 1 blocks\n==28903==   total heap usage: 42 allocs, 41 frees, 74,618 bytes allocated\n==28903==\n==28903== LEAK SUMMARY:\n==28903==    definitely lost: 0 bytes in 0 blocks\n==28903==    indirectly lost: 0 bytes in 0 blocks\n==28903==      possibly lost: 0 bytes in 0 blocks\n==28903==    still reachable: 72,704 bytes in 1 blocks\n==28903==         suppressed: 0 bytes in 0 blocks\n==28903== Reachable blocks (those to which a pointer was found) are not shown.\n==28903== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28903==\n==28903== For counts of detected and suppressed errors, rerun with: -v\n==28903== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "==28906== exp-sgcheck, a stack and global array overrun detector\n==28906== NOTE: This is an Experimental-Class Valgrind Tool\n==28906== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28906== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28906== Command: outputlVMYDp\n==28906==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28906-- WARNING: Serious error when reading debug info\n--28906-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28906-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_3881====Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Nekorektne pozicije tjemena, ponovite unos!\nUnesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]:\nTrouglovi prije transformacija:\n((1,3),(5,2),(7,1))\n((1,6),(3,4),(7,9))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja:\nTrouglovi nakon transformacija i sortiranja:\n((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n((3.50635,3.90931),(17.3241,6.921),(7.09336,37.258))\n\nVrhovi trougla sa najmanjim obimom: ((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n\nNema identicnih trouglova!\n\nNema podudarnih trouglova!\n\nNema slicnih trouglova!\n\n====END_TEST_3881======28906==\n==28906== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        },
+        "14": {
+            "success": false,
+            "status": 6,
+            "tools": {
+                "patch": {
+                    "success": true
+                },
+                "compile": {
+                    "status": 1,
+                    "duration": 1,
+                    "output": "main.cpp: In member function ‘void Trougao::Skaliraj(Tacka, double)’:\nmain.cpp:190:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");\n               ^\nmain.cpp: In function ‘bool DaLiSuIdenticni(Trougao, Trougao)’:\nmain.cpp:241:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\n         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {\n                                                                           ^~~~~~\nmain.cpp:241:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]\nmain.cpp: In function ‘bool DaLiSuPodudarni(Trougao, Trougao)’:\nmain.cpp:267:12: warning: unused variable ‘u1’ [-Wunused-variable]\n     double u1=t1.DajUgao(1);\n            ^~\nmain.cpp:268:12: warning: unused variable ‘u2’ [-Wunused-variable]\n     double u2=t1.DajUgao(2);\n            ^~\nmain.cpp:269:12: warning: unused variable ‘u3’ [-Wunused-variable]\n     double u3=t1.DajUgao(3);\n            ^~\nmain.cpp:270:12: warning: unused variable ‘v1’ [-Wunused-variable]\n     double v1=t2.DajUgao(1);\n            ^~\nmain.cpp:271:12: warning: unused variable ‘v2’ [-Wunused-variable]\n     double v2=t2.DajUgao(2);\n            ^~\nmain.cpp:272:12: warning: unused variable ‘v3’ [-Wunused-variable]\n     double v3=t2.DajUgao(3);\n            ^~",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": [
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 186,
+                            "col": "15",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(k==0) throw std::domain_error(\"Nekorektan faktor skaliranja\");"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe",
+                            "code": "if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 237,
+                            "col": "75",
+                            "message": "comparing floating point with == or != is unsafe"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 263,
+                            "col": "12",
+                            "message": "unused variable 'u1'",
+                            "code": "double u1=t1.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 264,
+                            "col": "12",
+                            "message": "unused variable 'u2'",
+                            "code": "double u2=t1.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 265,
+                            "col": "12",
+                            "message": "unused variable 'u3'",
+                            "code": "double u3=t1.DajUgao(3);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 266,
+                            "col": "12",
+                            "message": "unused variable 'v1'",
+                            "code": "double v1=t2.DajUgao(1);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 267,
+                            "col": "12",
+                            "message": "unused variable 'v2'",
+                            "code": "double v2=t2.DajUgao(2);"
+                        },
+                        {
+                            "type": "warning",
+                            "file": "main.cpp",
+                            "line": 268,
+                            "col": "12",
+                            "message": "unused variable 'v3'",
+                            "code": "double v3=t2.DajUgao(3);"
+                        }
+                    ]
+                },
+                "compile[debug]": {
+                    "status": 1,
+                    "duration": 2,
+                    "output": "",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "execute": {
+                    "output": "Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 3. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 4. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 5. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 6. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 7. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 8. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 9. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 10. trougla [x1 y1 x2 y2 x3 y3]: \nTrouglovi prije transformacija:\n((1,2),(6,7),(10,13))\n((5,4),(2,1),(5,7))\n((1,3),(5,2),(4,4))\n((1,3),(1,7),(4,3))\n((5,2),(1,3),(4,4))\n((1,3),(4,3),(4,7))\n((2,1),(6,1),(6,4))\n((5,2),(3,1),(3,4))\n((1,1),(2,2),(5,8))\n((1,3),(4,3),(1,7))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja: \nTrouglovi nakon transformacija i sortiranja:\n((3,4),(5,6),(11,18))\n((7,5),(3,3),(3,9))\n((3,6),(11,4),(9,8))\n((7,5),(-1,7),(5,9))\n((7,7),(1,1),(7,13))\n((3,5),(13,15),(21,27))\n((3,6),(3,14),(9,6))\n((3,6),(9,6),(9,14))\n((4,4),(12,4),(12,10))\n((3,6),(9,6),(3,14))\n\nVrhovi trougla sa najmanjim obimom: ((7,5),(3,3),(3,9))\n\nParovi identicnih trouglova:\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n\nParovi podudarnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(9,14))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((3,6),(9,6),(9,14)) i ((4,4),(12,4),(12,10))\n((3,6),(9,6),(9,14)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n\nParovi slicnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(9,14))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((3,6),(9,6),(9,14)) i ((4,4),(12,4),(12,10))\n((3,6),(9,6),(9,14)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))",
+                    "duration": 0,
+                    "status": false,
+                    "exit_code": 0,
+                    "success": 6
+                },
+                "debug": {
+                    "success": true
+                },
+                "profile[memcheck]": {
+                    "status": 1,
+                    "duration": 0,
+                    "output": "==28939== Memcheck, a memory error detector\n==28939== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.\n==28939== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28939== Command: outputKNOfpe\n==28939==\n====START_TEST_7125====Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 3. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 4. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 5. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 6. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 7. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 8. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 9. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 10. trougla [x1 y1 x2 y2 x3 y3]:\nTrouglovi prije transformacija:\n((1,2),(6,7),(10,13))\n((5,4),(2,1),(5,7))\n((1,3),(5,2),(4,4))\n((1,3),(1,7),(4,3))\n((5,2),(1,3),(4,4))\n((1,3),(4,3),(4,7))\n((2,1),(6,1),(6,4))\n((5,2),(3,1),(3,4))\n((1,1),(2,2),(5,8))\n((1,3),(4,3),(1,7))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja:\nTrouglovi nakon transformacija i sortiranja:\n((3,4),(5,6),(11,18))\n((7,5),(3,3),(3,9))\n((3,6),(11,4),(9,8))\n((7,5),(-1,7),(5,9))\n((7,7),(1,1),(7,13))\n((3,5),(13,15),(21,27))\n((3,6),(3,14),(9,6))\n((3,6),(9,6),(9,14))\n((4,4),(12,4),(12,10))\n((3,6),(9,6),(3,14))\n\nVrhovi trougla sa najmanjim obimom: ((7,5),(3,3),(3,9))\n\nParovi identicnih trouglova:\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n\nParovi podudarnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(9,14))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((3,6),(9,6),(9,14)) i ((4,4),(12,4),(12,10))\n((3,6),(9,6),(9,14)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n\nParovi slicnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(9,14))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((3,6),(9,6),(9,14)) i ((4,4),(12,4),(12,10))\n((3,6),(9,6),(9,14)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n\n====END_TEST_7125======28939==\n==28939== HEAP SUMMARY:\n==28939==     in use at exit: 72,704 bytes in 1 blocks\n==28939==   total heap usage: 629 allocs, 628 frees, 90,544 bytes allocated\n==28939==\n==28939== LEAK SUMMARY:\n==28939==    definitely lost: 0 bytes in 0 blocks\n==28939==    indirectly lost: 0 bytes in 0 blocks\n==28939==      possibly lost: 0 bytes in 0 blocks\n==28939==    still reachable: 72,704 bytes in 1 blocks\n==28939==         suppressed: 0 bytes in 0 blocks\n==28939== Reachable blocks (those to which a pointer was found) are not shown.\n==28939== To see them, rerun with: --leak-check=full --show-reachable=yes\n==28939==\n==28939== For counts of detected and suppressed errors, rerun with: -v\n==28939== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 8 from 6)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                },
+                "profile[sgcheck]": {
+                    "status": 1,
+                    "duration": 3,
+                    "output": "==28942== exp-sgcheck, a stack and global array overrun detector\n==28942== NOTE: This is an Experimental-Class Valgrind Tool\n==28942== Copyright (C) 2003-2012, and GNU GPL'd, by OpenWorks Ltd et al.\n==28942== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info\n==28942== Command: outputKNOfpe\n==28942==\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\nchase_cuOff: no entry for 0x223a0\nchase_cuOff: no entry for 0x223df\nchase_cuOff: no entry for 0x37ea8\nchase_cuOff: no entry for 0x37eec\nchase_cuOff: no entry for 0x3b080\nchase_cuOff: no entry for 0x3b0cf\nchase_cuOff: no entry for 0xcb05b\nchase_cuOff: no entry for 0xcb060\nchase_cuOff: no entry for 0xcb092\nchase_cuOff: no entry for 0xcb097\n\n: Invalid cuOff = 0x56dfe\n--28942-- WARNING: Serious error when reading debug info\n--28942-- When reading debug info from /opt/gcc-6.2.0/lib64/libstdc++.so.6.0.22:\n--28942-- resolve_variable_types: cuOff does not refer to a known type\n====START_TEST_7125====Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 3. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 4. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 5. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 6. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 7. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 8. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 9. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 10. trougla [x1 y1 x2 y2 x3 y3]:\nTrouglovi prije transformacija:\n((1,2),(6,7),(10,13))\n((5,4),(2,1),(5,7))\n((1,3),(5,2),(4,4))\n((1,3),(1,7),(4,3))\n((5,2),(1,3),(4,4))\n((1,3),(4,3),(4,7))\n((2,1),(6,1),(6,4))\n((5,2),(3,1),(3,4))\n((1,1),(2,2),(5,8))\n((1,3),(4,3),(1,7))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja:\nTrouglovi nakon transformacija i sortiranja:\n((3,4),(5,6),(11,18))\n((7,5),(3,3),(3,9))\n((3,6),(11,4),(9,8))\n((7,5),(-1,7),(5,9))\n((7,7),(1,1),(7,13))\n((3,5),(13,15),(21,27))\n((3,6),(3,14),(9,6))\n((3,6),(9,6),(9,14))\n((4,4),(12,4),(12,10))\n((3,6),(9,6),(3,14))\n\nVrhovi trougla sa najmanjim obimom: ((7,5),(3,3),(3,9))\n\nParovi identicnih trouglova:\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n\nParovi podudarnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(9,14))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((3,6),(9,6),(9,14)) i ((4,4),(12,4),(12,10))\n((3,6),(9,6),(9,14)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n\nParovi slicnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(9,14))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((3,6),(9,6),(9,14)) i ((4,4),(12,4),(12,10))\n((3,6),(9,6),(9,14)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n\n====END_TEST_7125======28942==\n==28942== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 32 from 32)",
+                    "exit_code": 0,
+                    "success": true,
+                    "parsed_output": []
+                }
+            }
+        }
+    },
+    "time": 1622984071
+}

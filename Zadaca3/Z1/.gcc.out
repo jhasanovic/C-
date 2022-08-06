@@ -1,0 +1,8 @@
+/rhome/j/jhasanovic1/workspace/TP/Z3/Z1/main.cpp: In lambda function:
+/rhome/j/jhasanovic1/workspace/TP/Z3/Z1/main.cpp:47:13: warning: unused variable ‘indeks_y1’ [-Wunused-variable]
+         int indeks_y1=donja_granica-pomocni_x.begin();
+             ^~~~~~~~~
+/rhome/j/jhasanovic1/workspace/TP/Z3/Z1/main.cpp: In lambda function:
+/rhome/j/jhasanovic1/workspace/TP/Z3/Z1/main.cpp:117:13: warning: unused variable ‘indeks_y1’ [-Wunused-variable]
+         int indeks_y1=donja_granica-pomocni_x.begin();
+             ^~~~~~~~~

@@ -1,0 +1,497 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 4, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 1: Test konstruktora i metode Postavi (obje verzije) sa izuzecima\n    \/\/ Takodjer testira da li trougao ostane nepromijenjen nakon poziva funkcije Postavi sa nevalidnim ulaznim parametrima\n    {\n        Trougao trougao({ 1, 2 }, { 3, 4 }, { 4, 3 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n\n        trougao.Postavi({ 4, 1 }, { 2, 3 }, { 0, 0 });\n        std::cout << \"\\nNove koordinate tjemena: \";\n        trougao.Ispisi();\n\n        trougao.Postavi(3, { 5, 5 });\n        std::cout << \"\\nNove koordinate tjemena: \";\n        trougao.Ispisi();\n\n        \/\/ Test izuzetaka\n        try\n        {\n            trougao.Postavi({ 1, 1 }, { 1, 1 }, { 3, 5 });\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n            trougao.Ispisi();\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            trougao.Postavi(0, { 3, 3 });\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n            trougao.Ispisi();\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            Trougao degenerisanTrougao({ 1, 1 }, { 1, 1 }, { 3, 5 });\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((1,2),(3,4),(4,3))\nNove koordinate tjemena: ((4,1),(2,3),(0,0))\nNove koordinate tjemena: ((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektan indeks\n((4,1),(2,3),(5,5))\nIzuzetak: Nekorektne pozicije tjemena"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 2: Test metoda DajTjeme, DajStranicu i DajUgao sa izuzecima\n    {\n        Trougao trougao({ 1, 0 }, { 4, 2 }, { 3, 5 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n\n        std::cout << std::endl;\n\n        for (int idx = 1; idx <= 3; ++idx)\n        {\n            Tacka tjeme = trougao.DajTjeme(idx);\n            std::cout << \"Stranica i ugao naspram tjemena (\" << tjeme.first << \", \" << tjeme.second << \"): \" <<\n                      trougao.DajStranicu(idx) << \" i \" << trougao.DajUgao(idx) << \" radijana.\" << std::endl;\n        }\n\n        \/\/ Test izuzetaka za metode DajTjeme, DajStranicu i DajUgao\n        try\n        {\n            trougao.DajTjeme(4);\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            trougao.DajStranicu(0);\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            trougao.DajUgao(0);\n        }\n        catch (std::range_error e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((1,0),(4,2),(3,5))\nStranica i ugao naspram tjemena (1, 0): 3.16228 i 0.602287 radijana.\nStranica i ugao naspram tjemena (4, 2): 5.38516 i 1.83705 radijana.\nStranica i ugao naspram tjemena (3, 5): 3.60555 i 0.702257 radijana.\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks\nIzuzetak: Nekorektan indeks"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 3: Test metoda DajObim i DajPovrsinu\n    {\n        Trougao trougao({ 0, 0 }, { 3,1 }, { 2,5 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n        std::cout << \"\\nObim trougla: \" << trougao.DajObim() <<\n                  \"\\nPovrsina trougla: \" << trougao.DajPovrsinu();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((0,0),(3,1),(2,5))\nObim trougla: 12.6705\nPovrsina trougla: 6.5"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 4: Test metoda DajCentar i Centriraj\n    {\n        Trougao trougao({ 5, 1 }, { 0, -1 }, { 4, 0 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n\n        Tacka t = trougao.DajCentar();\n        std::cout << \"\\nCentar trougla: (\" << t.first << ',' << t.second << ')';\n        trougao.Centriraj({ 0, 0 });\n        std::cout << \"\\nVrhovi trougla centriranog u tacki (0,0): \";\n        trougao.Ispisi();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((5,1),(0,-1),(4,0))\nCentar trougla: (3,0)\nVrhovi trougla centriranog u tacki (0,0): ((2,1),(-3,-1),(1,0))"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#include <cmath>\n#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 5: Test metoda Transliraj i Rotiraj\n    {\n        Trougao trougao({ 6, 4 }, { 6, 8 }, { 1, 8 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n\n        trougao.Transliraj(0, 0);\n        std::cout << \"\\nTrougao nakon translacije za delta_x = 0 i delta_y = 0: \";\n        trougao.Ispisi();\n\n        trougao.Transliraj(2, 4);\n        std::cout << \"\\nTrougao nakon translacije za delta_x = 2 i delta_y = 4: \";\n        trougao.Ispisi();\n\n        trougao.Transliraj(-2, -4);\n        std::cout << \"\\nTrougao nakon translacije za delta_x = -2 i delta_y = -4: \";\n        trougao.Ispisi();\n\n        trougao.Transliraj(1, 2);\n        std::cout << \"\\nTrougao nakon translacije za delta_x = 1 i delta_y = 2: \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj({ 7, 6 }, 2 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za PI\/2 radijana oko tacke (7,6): \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj({ 7, 6 }, 4 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za PI radijana oko tacke (7,6): \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj({ 7, 6 }, -4 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za -PI radijana oko tacke (7,6): \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj({ 7, 6 }, 8 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za 2PI radijana oko tacke (7,6): \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj(8 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za 2PI radijana oko tezista: \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj(4 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za PI radijana oko tezista: \";\n        trougao.Ispisi();\n\n        trougao.Rotiraj(-4 * std::atan(1));\n        std::cout << \"\\nTrougao nakon rotacije za -PI radijana oko tezista: \";\n        trougao.Ispisi();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 0 i delta_y = 0: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 2 i delta_y = 4: ((8,8),(8,12),(3,12))\nTrougao nakon translacije za delta_x = -2 i delta_y = -4: ((6,4),(6,8),(1,8))\nTrougao nakon translacije za delta_x = 1 i delta_y = 2: ((7,6),(7,10),(2,10))\nTrougao nakon rotacije za PI\/2 radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tacke (7,6): ((7,6),(11,6),(11,11))\nTrougao nakon rotacije za -PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tacke (7,6): ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za 2PI radijana oko tezista: ((7,6),(3,6),(3,1))\nTrougao nakon rotacije za PI radijana oko tezista: ((1.66667,2.66667),(5.66667,2.66667),(5.66667,7.66667))\nTrougao nakon rotacije za -PI radijana oko tezista: ((7,6),(3,6),(3,1))"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 6: Test metode Skaliraj sa izuzecima\n    {\n        Trougao trougao({ 7, 6 }, { 3, 6 }, { 3, 1 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n\n        trougao.Skaliraj({ 7, 6 }, 2);\n        std::cout << \"\\nTrougao nakon skaliranja sa 2 u odnosu na tacku (7,6): \";\n        trougao.Ispisi();\n\n        trougao.Postavi(3, { 0, 0 });\n        std::cout << \"\\nNove koordinate tjemena: \";\n        trougao.Ispisi();\n        trougao.Skaliraj(2);\n        std::cout << \"\\nTrougao nakon skaliranja sa 2 u odnosu na teziste: \";\n        trougao.Ispisi();\n\n        trougao.Skaliraj(0.5);\n        std::cout << \"\\nTrougao nakon skaliranja sa 0.5 u odnosu na teziste: \";\n        trougao.Ispisi();\n\n        trougao.Skaliraj(-2);\n        std::cout << \"\\nTrougao nakon skaliranja sa -2 u odnosu na teziste: \";\n        trougao.Ispisi();\n\n        trougao.Skaliraj(-0.5);\n        std::cout << \"\\nTrougao nakon skaliranja sa -0.5 u odnosu na teziste: \";\n        trougao.Ispisi();\n\n        try\n        {\n            trougao.Skaliraj(0);\n            std::cout << \"\\nTrougao nakon skaliranja sa 0 u odnosu na teziste: \";\n            trougao.Ispisi();\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"\\nIzuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"\\nPogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            trougao.Skaliraj({ 7, 6 }, 0);\n            std::cout << \"\\nTrougao nakon skaliranja sa 0 u odnosu na tacku (7,6): \";\n            trougao.Ispisi();\n        }\n        catch (std::domain_error e)\n        {\n            std::cout << \"Izuzetak: \" << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((7,6),(3,6),(3,1))\nTrougao nakon skaliranja sa 2 u odnosu na tacku (7,6): ((7,6),(-1,6),(-1,-4))\nNove koordinate tjemena: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa 2 u odnosu na teziste: ((12,8),(-4,8),(-2,-4))\nTrougao nakon skaliranja sa 0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nTrougao nakon skaliranja sa -2 u odnosu na teziste: ((-8,0),(8,0),(6,12))\nTrougao nakon skaliranja sa -0.5 u odnosu na teziste: ((7,6),(-1,6),(0,0))\nIzuzetak: Nekorektan faktor skaliranja\nIzuzetak: Nekorektan faktor skaliranja"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void IspisRelacijeTrouglova(const Trougao& t1, const Trougao& t2, bool res, const char* relacija, bool detalji = true) {\n\tif (detalji) {\n\t\tstd::cout << \"Trouglovi: \";\n\t\tt1.Ispisi();\n\t\tstd::cout << \" i \";\n\t\tt2.Ispisi();\n\t}\n\telse\n\t\tstd::cout << \"Test:\";\n\n\tstd::cout << (res ? \" JESU \" : \" NISU \") << relacija << \".\\n\";\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 7: Test metode DaLiSuIdenticni - primjer iz postavke zadatka\n    {\n        Trougao t1({ 1, 3 }, { 5, 2 }, { 4, 4 }), t2({ 5, 2 }, { 1, 3 }, { 4, 4 });\n        IspisRelacijeTrouglova(t1, t2, DaLiSuIdenticni(t1, t2), \"identicni\");\n\n        \/\/ Transliraj prvi trougao\n        t1.Transliraj(1, 1);\n        std::cout << \"Nove koordinate tjemena prvog trougla: \";\n        t1.Ispisi();\n        std::cout << std::endl;\n        IspisRelacijeTrouglova(t1, t2, DaLiSuIdenticni(t1, t2), \"identicni\");\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Trouglovi: ((1,3),(5,2),(4,4)) i ((5,2),(1,3),(4,4)) JESU identicni.\nNove koordinate tjemena prvog trougla: ((2,4),(6,3),(5,5))\nTrouglovi: ((2,4),(6,3),(5,5)) i ((5,2),(1,3),(4,4)) NISU identicni.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void IspisRelacijeTrouglova(const Trougao& t1, const Trougao& t2, bool res, const char* relacija, bool detalji = true) {\n\tif (detalji) {\n\t\tstd::cout << \"Trouglovi: \";\n\t\tt1.Ispisi();\n\t\tstd::cout << \" i \";\n\t\tt2.Ispisi();\n\t}\n\telse\n\t\tstd::cout << \"Test:\";\n\n\tstd::cout << (res ? \" JESU \" : \" NISU \") << relacija << \".\\n\";\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 8: Test metode DaLiSuPodudarni - primjer iz postavke zadatka\n\t{\n\t\tTrougao t1({ 2, 1 }, { 6, 1 }, { 6, 4 }), t2({ 1, 3 }, { 1, 7 }, { 4, 3 });\n\t\tIspisRelacijeTrouglova(t1, t2, DaLiSuPodudarni(t1, t2), \"podudarni\");\n\n\t\tt1.Postavi({ 1, 3 }, { 4, 3 }, { 4, 7 });\n\t\tstd::cout << \"Nove koordinate tjemena prvog trougla: \";\n\t\tt1.Ispisi();\n\t\tstd::cout << std::endl;\n\t\tIspisRelacijeTrouglova(t1, t2, DaLiSuPodudarni(t1, t2), \"podudarni\");\n\t}",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Trouglovi: ((2,1),(6,1),(6,4)) i ((1,3),(1,7),(4,3)) JESU podudarni.\nNove koordinate tjemena prvog trougla: ((1,3),(4,3),(4,7))\nTrouglovi: ((1,3),(4,3),(4,7)) i ((1,3),(1,7),(4,3)) NISU podudarni.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void IspisRelacijeTrouglova(const Trougao& t1, const Trougao& t2, bool res, const char* relacija, bool detalji = true) {\n\tif (detalji) {\n\t\tstd::cout << \"Trouglovi: \";\n\t\tt1.Ispisi();\n\t\tstd::cout << \" i \";\n\t\tt2.Ispisi();\n\t}\n\telse\n\t\tstd::cout << \"Test:\";\n\n\tstd::cout << (res ? \" JESU \" : \" NISU \") << relacija << \".\\n\";\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 9: Test metode DaLiSuSlicni\n    {\n        Trougao t1({ 0, 0 }, { 1, 3 }, { 3, 0 }), t2({ 0, 0 }, { 6, 0 }, { 4, -6 });\n        IspisRelacijeTrouglova(t1, t2, DaLiSuSlicni(t1, t2), \"slicni\");\n\n        t1.Postavi(1, { 1, 0 });\n        std::cout << \"Nove koordinate tjemena prvog trougla: \";\n        t1.Ispisi();\n        std::cout << std::endl;\n        IspisRelacijeTrouglova(t1, t2, DaLiSuSlicni(t1, t2), \"slicni\");\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Trouglovi: ((0,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) JESU slicni.\nNove koordinate tjemena prvog trougla: ((1,0),(1,3),(3,0))\nTrouglovi: ((1,0),(1,3),(3,0)) i ((0,0),(6,0),(4,-6)) NISU slicni.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut",
+                    "use_markers": true
+                },
+                {
+                    "position": "above_main",
+                    "code": "void IspisPozicijeTacke(const Tacka& t, bool res, bool detalji = true)\n{\n    if (detalji)\n        std::cout << \"Tacka (\" << t.first << ',' << t.second << \") je\";\n    else\n        std::cout << \"Test:\";\n\n    std::cout << (res ? \" UNUTAR trougla.\\n\" : \" VAN trougla.\\n\");\n}",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 10: Test metode DaLiJeUnutra\n    {\n        Trougao trougao({ -1, 2 }, { 4, 0 }, { 2, -2 });\n        std::cout << \"Koordinate tjemena: \";\n        trougao.Ispisi();\n\n        std::cout << std::endl;\n\n        Tacka tacke[]\n        {\n            {2,   0  },\n            {-1,  0  },\n            {3,   0  },\n            {0.5, 0.5},\n            {0,   1  },\n            {0,   4  },\n            {1,   5  },\n            {2,   6  },\n            {0,   -1 },\n            {5,   0  }\n        };\n\n        for (int i = 0; i < 10; ++i)\n            IspisPozicijeTacke(tacke[i], trougao.DaLiJeUnutra(tacke[i]));\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Koordinate tjemena: ((-1,2),(4,0),(2,-2))\nTacka (2,0) je UNUTAR trougla.\nTacka (-1,0) je VAN trougla.\nTacka (3,0) je UNUTAR trougla.\nTacka (0.5,0.5) je UNUTAR trougla.\nTacka (0,1) je UNUTAR trougla.\nTacka (0,4) je VAN trougla.\nTacka (1,5) je VAN trougla.\nTacka (2,6) je VAN trougla.\nTacka (0,-1) je VAN trougla.\nTacka (5,0) je VAN trougla.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "top_of_file",
+                    "code": "#define Trougao Trokut\n#define DajUgao DajKut\n#include <vector>\n#include <algorithm>",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 11: Test metode DaLiJePozitivnoOrijentiran - primjer iz predavanja\n\t{\n\t\tstd::vector<Tacka> tacke{ { 1, 3 }, { 5, 2 }, { 4, 4 } };\n\n\t\tfor (int i = 0; i < 6; ++i) {\n\t\t\tstd::next_permutation(tacke.begin(), tacke.end());\n\t\t\tTrougao trougao(tacke[0], tacke[1], tacke[2]);\n\n\t\t\tstd::cout << \"Trougao \";\n\t\t\ttrougao.Ispisi();\n\t\t\tstd::cout << \" je\" << (trougao.DaLiJePozitivnoOrijentiran() ? \" POZITIVNO orijentiran.\\n\" : \" NEGATIVNO orijentiran.\\n\");\n\t\t}\n\t}",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Trougao ((4,4),(1,3),(5,2)) je POZITIVNO orijentiran.\nTrougao ((4,4),(5,2),(1,3)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(1,3),(4,4)) je NEGATIVNO orijentiran.\nTrougao ((5,2),(4,4),(1,3)) je POZITIVNO orijentiran.\nTrougao ((1,3),(4,4),(5,2)) je NEGATIVNO orijentiran.\nTrougao ((1,3),(5,2),(4,4)) je POZITIVNO orijentiran.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 12: Test main-a\n    \/\/ NAPOMENA: Izuzetak ispisati koristeci \"std::cout << e.what() << \", ponovite unos!\" << std::endl;\"\n    {\n        _main();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n1 3 5 2 7 1\n1 1 2 2 3 3\n1 6 3 4 7 9\n1 0\n1\n5\n"
+                },
+                "expect": [
+                    "Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Nekorektne pozicije tjemena, ponovite unos!\nUnesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: \nTrouglovi prije transformacija:\n((1,3),(5,2),(7,1))\n((1,6),(3,4),(7,9))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja: \nTrouglovi nakon transformacija i sortiranja:\n((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n((3.50635,3.90931),(17.3241,6.921),(7.09336,37.258))\n\nVrhovi trougla sa najmanjim obimom: ((2.69085,-0.264601),(17.7043,13.8633),(27.3146,19.5765))\n\nNema identicnih trouglova!\n\nNema podudarnih trouglova!\n\nNema slicnih trouglova!\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n1 3 5 2 7 1\n1 1 2 2 3 3\n1 6 3 4 7 9\n1 0\n1\n5\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n1 3 5 2 7 1\n1 1 2 2 3 3\n1 6 3 4 7 9\n1 0\n1\n5\n"
+                }
+            }
+        },
+        {
+            "id": 14,
+            "name": "Test 14",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 1\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 1, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 13: Test main-a\n\t\/\/ NAPOMENA: Izuzetak ispisati koristeci \"std::cout << e.what() << \", ponovite unos!\" << std::endl;\"\n    {\n        _main();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "10\n1 2 6 7 10 13\n5 4 2 1 5 7\n1 3 5 2 4 4\n1 3 1 7 4 3\n5 2 1 3 4 4\n1 3 4 3 4 7\n2 1 6 1 6 4\n5 2 3 1 3 4\n1 1 2 2 5 8\n1 3 4 3 1 7\n2 3\n0\n2\n"
+                },
+                "expect": [
+                    "Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 3. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 4. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 5. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 6. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 7. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 8. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 9. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 10. trougla [x1 y1 x2 y2 x3 y3]: \nTrouglovi prije transformacija:\n((1,2),(6,7),(10,13))\n((5,4),(2,1),(5,7))\n((1,3),(5,2),(4,4))\n((1,3),(1,7),(4,3))\n((5,2),(1,3),(4,4))\n((1,3),(4,3),(4,7))\n((2,1),(6,1),(6,4))\n((5,2),(3,1),(3,4))\n((1,1),(2,2),(5,8))\n((1,3),(4,3),(1,7))\n\nUnesite vektor translacije [dx dy]:  Unesite ugao rotacije: Unesite faktor skaliranja: \nTrouglovi nakon transformacija i sortiranja:\n((3,4),(5,6),(11,18))\n((7,5),(3,3),(3,9))\n((3,6),(11,4),(9,8))\n((7,5),(-1,7),(5,9))\n((7,7),(1,1),(7,13))\n((3,5),(13,15),(21,27))\n((3,6),(3,14),(9,6))\n((3,6),(9,6),(9,14))\n((4,4),(12,4),(12,10))\n((3,6),(9,6),(3,14))\n\nVrhovi trougla sa najmanjim obimom: ((7,5),(3,3),(3,9))\n\nParovi identicnih trouglova:\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n\nParovi podudarnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n\nParovi slicnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((4,4),(12,4),(12,10))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n",
+                    "Unesite broj trouglova: Unesite vrhove 1. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 2. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 3. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 4. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 5. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 6. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 7. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 8. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 9. trougla [x1 y1 x2 y2 x3 y3]: Unesite vrhove 10. trougla [x1 y1 x2 y2 x3 y3]:\nTrouglovi prije transformacija:\n((1,2),(6,7),(10,13))\n((5,4),(2,1),(5,7))\n((1,3),(5,2),(4,4))\n((1,3),(1,7),(4,3))\n((5,2),(1,3),(4,4))\n((1,3),(4,3),(4,7))\n((2,1),(6,1),(6,4))\n((5,2),(3,1),(3,4))\n((1,1),(2,2),(5,8))\n((1,3),(4,3),(1,7))\n\nUnesite vektor translacije [dx dy]: Unesite ugao rotacije: Unesite faktor skaliranja: \nTrouglovi nakon transformacija i sortiranja:\n((3,4),(5,6),(11,18))\n((7,5),(3,3),(3,9))\n((7,5),(-1,7),(5,9))\n((3,6),(11,4),(9,8))\n((7,7),(1,1),(7,13))\n((3,5),(13,15),(21,27))\n((3,6),(9,6),(9,14))\n((3,6),(9,6),(3,14))\n((3,6),(3,14),(9,6))\n((4,4),(12,4),(12,10))\n\nVrhovi trougla sa najmanjim obimom: ((7,5),(3,3),(3,9))\n\nParovi identicnih trouglova:\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n\nParovi podudarnih trouglova:\n((3,6),(11,4),(9,8)) i ((7,5),(-1,7),(5,9))\n((3,6),(3,14),(9,6)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n((4,4),(12,4),(12,10)) i ((3,6),(3,14),(9,6))\n\nParovi slicnih trouglova:\n((3,6),(9,6),(3,14)) i ((3,6),(9,6),(9,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(9,14))\n((4,4),(12,4),(12,10)) i ((3,6),(9,6),(3,14))\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "10\n1 2 6 7 10 13\n5 4 2 1 5 7\n1 3 5 2 4 4\n1 3 1 7 4 3\n5 2 1 3 4 4\n1 3 4 3 4 7\n2 1 6 1 6 4\n5 2 3 1 3 4\n1 1 2 2 5 8\n1 3 4 3 1 7\n2 3\n0\n2\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "10\n1 2 6 7 10 13\n5 4 2 1 5 7\n1 3 5 2 4 4\n1 3 1 7 4 3\n5 2 1 3 4 4\n1 3 4 3 4 7\n2 1 6 1 6 4\n5 2 3 1 3 4\n1 1 2 2 5 8\n1 3 4 3 1 7\n2 3\n0\n2\n"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+/rhome/j/jhasanovic1/workspace/TP/Z5/Z4/main.cpp: In member function ‘virtual int ApstraktnoVozilo::DajUkupnuTezinu() const’:
+/rhome/j/jhasanovic1/workspace/TP/Z5/Z4/main.cpp:17:41: warning: no return statement in function returning non-void [-Wreturn-type]
+     virtual int DajUkupnuTezinu()const {}
+                                         ^
+/rhome/j/jhasanovic1/workspace/TP/Z5/Z4/main.cpp: In member function ‘virtual ApstraktnoVozilo* ApstraktnoVozilo::DajKopiju() const’:
+/rhome/j/jhasanovic1/workspace/TP/Z5/Z4/main.cpp:18:49: warning: no return statement in function returning non-void [-Wreturn-type]
+     virtual ApstraktnoVozilo *DajKopiju()const {}
+                                                 ^
+/rhome/j/jhasanovic1/workspace/TP/Z5/Z4/main.cpp: In member function ‘int Vozilo::IspisiPodatke() const’:
+/rhome/j/jhasanovic1/workspace/TP/Z5/Z4/main.cpp:135:5: warning: no return statement in function returning non-void [-Wreturn-type]
+     }
+     ^

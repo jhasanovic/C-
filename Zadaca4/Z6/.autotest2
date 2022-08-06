@@ -1,0 +1,123 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 4, Zadatak 6",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "_main();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n12345\n2\/M\nMarljivi Student\nUlica marljivih studenata bb\n061 616 307\nK"
+                },
+                "expect": [
+                    "Odaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\nUnesite broj indeksa: \nUnesite godinu studija (formata A\/X, gdje je A godina studija, a X prima vrijednosti B,M,D, zavisno od studija): \nUnesite ime i prezime studenta: \nUnesite adresu studenta: \nUnesite broj telefona (formata x\/x-x): \nIzuzetak: Neispravni parametri!\nOdaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n12345\n2\/M\nMarljivi Student\nUlica marljivih studenata bb\n061 616 307\nK"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n12345\n2\/M\nMarljivi Student\nUlica marljivih studenata bb\n061 616 307\nK"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "_main();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n928912\nLaptop za TP\nPola laptop - Pola workspace\n4\nK\n"
+                },
+                "expect": [
+                    "Odaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\nUnesite evidencijski broj laptopa \nUnesite naziv laptopa \nUnesite karakteristike laptopa: \nLaptop uspjesno registrovan!\nOdaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\nEvidencijski broj: 928912\nNaziv: Laptop za TP\nKarakteristike: Pola laptop - Pola workspace\n\n\nOdaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n928912\nLaptop za TP\nPola laptop - Pola workspace\n4\nK\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n928912\nLaptop za TP\nPola laptop - Pola workspace\n4\nK\n"
+                }
+            }
+        }
+    ]
+}

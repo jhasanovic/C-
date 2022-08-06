@@ -1,0 +1,348 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 5, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n\/\/ eventualne gre\u0161ke u testovima prijaviti na kerim.hodzic@etf.unsa.ba\n\n    {\/\/AT1 konstruktor\n        try {\n            Datum d(29, Datum::Februar, 1900);\n        }\n        catch(std::domain_error &ex){\n            std::cout << ex.what() << std::endl;\n        }\n        Datum d(1,2,2001);\n        std::cout << d.DajDan() << \" \" << d.DajMjesec() << \" \" << d.DajGodinu() << std::endl;\n        try{\n            Datum d(1,2,1799);\n        }\n        catch(std::domain_error &ex){\n            std::cout << ex.what() << std::endl;\n        }\n       \n        Datum d3(1, Datum::Januar, 1900);\n        std::cout << d3.DajDan() << \" \" << d3.DajMjesec() << \" \" << d3.DajGodinu() ;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nelegalan datum\n1 2 2001\nNelegalan datum\n1 1 1900\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n   {\/\/AT2 Vise neispravnih datuma\n        std::vector<int> dani{0, 32, 31, 1, 1, 31, -15, 1, 1 };\n        std::vector<int> mjeseci{1, 1, 4, 0, 13, 6, 5, 15, -2 };\n        for (int i(0); i<dani.size(); i++) {\n            try {\n                Datum d(dani[i],mjeseci[i],2014);\n            } catch(std::domain_error &ex) {\n                std::cout << i + 1 << \". - \" << ex.what() << std::endl;\n            }\n        }\n\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1. - Nelegalan datum\n2. - Nelegalan datum\n3. - Nelegalan datum\n4. - Nelegalan datum\n5. - Nelegalan datum\n6. - Nelegalan datum\n7. - Nelegalan datum\n8. - Nelegalan datum\n9. - Nelegalan datum\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    {\/\/AT3  ++ -- += operatori, DajImeMjeseca, DajImeDanaUSedmici\n        Datum d(3,1,2010);\n        d++;\n        std::cout<<d.DajDan()<<\" \"<<d.DajImeMjeseca()<<\" \"<<d.DajGodinu()<<\" \"<<d.DajImeDanaUSedmici()<<\" \";\n        d+=4;\n        std::cout<<d.DajDan()<<\" \"<<d.DajImeMjeseca()<<\" \"<<d.DajGodinu()<<\" \"<<d.DajImeDanaUSedmici()<<\" \";\n        d--;\n        --d;\n        std::cout<<d.DajDan()<<\" \"<<d.DajImeMjeseca()<<\" \"<<d.DajGodinu()<<\" \"<<d.DajImeDanaUSedmici() << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "4 Januar 2010 Ponedjeljak 8 Januar 2010 Petak 6 Januar 2010 Srijeda\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT4++ -- operatori, << operator\n        Datum d(28,2,2008);\n        std::cout << d++ << \" \";\n        std::cout << ++d << \" \";\n        std::cout << --d << \" \";\n        std::cout << d-- << \" \";\n        std::cout << d << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "28. Februar 2008. (Cetvrtak) 1. Mart 2008. (Subota) 29. Februar 2008. (Petak) 29. Februar 2008. (Petak) 28. Februar 2008. (Cetvrtak)\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT5 (skriveni) + operator\n        Datum d(31,12,2012);\n        Datum d2(d+1);\n        if (d2.DajMjesec() == Datum::Januar) std::cout<<\"Januar \";\n        std::cout<<d2.DajDan()<<\" \"<<d2.DajGodinu() << std::endl;\n\n        Datum d1(1,3,2004);\n        Datum d3(d1+(-1));\n        if (d3.DajMjesec() == Datum::Februar) std::cout<<\"Februar \";\n        std::cout<<d3.DajDan()<<\" \"<<d3.DajGodinu()<< std::endl;\n\n\n        Datum d4(1,3,2005);\n        Datum d5(d4-1);\n        if (d5.DajMjesec() == Datum::Februar) std::cout<<\"Februar \";\n        std::cout<<d5.DajDan()<<\" \"<<d5.DajGodinu() << std::endl;\n\n        Datum d6(1,1,2005);\n        Datum d7(d6-1);\n        if (d7.DajMjesec() == Datum::Decembar) std::cout<<\"Decembar \";\n        std::cout<<d7.DajDan()<<\" \"<<d7.DajGodinu() << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Januar 1 2013\nFebruar 29 2004\nFebruar 28 2005\nDecembar 31 2004\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    {\/\/AT6  ++ -- granicni\n        Datum d2(31,12,2012);\n        d2++;\n        if (d2.DajMjesec() == Datum::Januar) std::cout<<\"Januar \";\n        std::cout<<d2.DajDan()<<\" \"<<d2.DajGodinu() << std::endl;\n\n        Datum d3(1,3,2004);\n        d3--;\n        if (d3.DajMjesec() == Datum::Februar) std::cout<<\"Februar \";\n        std::cout<<d3.DajDan()<<\" \"<<d3.DajGodinu()<< std::endl;\n\n\n        Datum d5(1,3,2005);\n        d5--;\n        if (d5.DajMjesec() == Datum::Februar) std::cout<<\"Februar \";\n        std::cout<<d5.DajDan()<<\" \"<<d5.DajGodinu() << std::endl;\n\n        Datum d7(1,1,2005);\n        d7--;\n        if (d7.DajMjesec() == Datum::Decembar) std::cout<<\"Decembar \";\n        std::cout<<d7.DajDan()<<\" \"<<d7.DajGodinu() << std::endl;\n\n        try{\n            Datum d(1,1,1800);\n            d--;\n            std::cout << \"Greska: \" << d.DajGodinu();\n        }\n        catch(std::domain_error &ex){\n            std::cout << ex.what() << std::endl;\n        }\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Januar 1 2013\nFebruar 29 2004\nFebruar 28 2005\nDecembar 31 2004\nNelegalan datum\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT7   += -= operatori\n        Datum d(1,2,2018);\n        d+= 30;\n        std::cout << d << std::endl;\n        d-=30;\n        std::cout << d << std::endl;\n        d+=365;\n        std::cout << d << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "3. Mart 2018. (Subota)\n1. Februar 2018. (Cetvrtak)\n1. Februar 2019. (Petak)\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    {\/\/AT8 - operator dva datuma\n        Datum d(1,2,2018);\n        Datum d1(1,2,2018);\n        Datum d2(30,1,2018);\n        Datum d3(8,1,2019);\n        std::cout << d - d1 << \" \" << d1-d2 << \" \" << d2-d3 << \" \" << d3-d << \" \" << d2-d << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0 2 343 341 2\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT9 operatori == != < > >= >=\n        Datum d1(31,12,2008);\n        Datum d2(d1);\n        if ((d2==d1) && !(d2!=d1) && !(d2<d1) && !(d2>d1) && (d2<=d1) && (d2>=d1)) std::cout<<\"OK1 \";\n        d2++;\n        if (!(d2==d1) && (d2!=d1) && !(d2<d1) && (d2>d1) && !(d2<=d1) && (d2>=d1))\n            std::cout<<\"OK2 \";\n        if (!(d1==d2) && (d1!=d2) && (d1<d2) && !(d1>d2) && (d1<=d2) && !(d1>=d2))\n            std::cout<<\"OK3\";\n        std::cout << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK1 OK2 OK3\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT10  Operator >>\n        Datum d(1,1,2001);\n        while(!(std::cin >> d)){\n            std::cout << \"Neispravan ulaz\" << std::endl;\n            std::cin.clear();\n            std::cin.ignore(1000, '\\n');\n        }\n        std::cout << d;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "31\/1.2018\n31.1.2018\n112131\n31\/d\/2018\n31\/1\/2018\n"
+                },
+                "expect": [
+                    "Neispravan ulaz\nNeispravan ulaz\nNeispravan ulaz\nNeispravan ulaz\n31. Januar 2018. (Srijeda)\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "31\/1.2018\n31.1.2018\n112131\n31\/d\/2018\n31\/1\/2018"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "31\/1.2018\n31.1.2018\n112131\n31\/d\/2018\n31\/1\/2018"
+                }
+            }
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT11 metode inspektori\n        Datum d(10,6,2014);\n        const Datum& d2(d);\n        std::cout<<d2.DajDan()<<\" \"<<d2.DajImeMjeseca()<<\" \"<<d2.DajGodinu()<<\" \"<<d2.DajImeDanaUSedmici()<<\" \";\n        if (d2.DajMjesec() == Datum::Juni) std::cout << \"OK \";\n        if (d2.DajDanUSedmici() == Datum::Utorak) std::cout << \"OK\";\n        std::cout << std::endl;\n\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "10 Juni 2014 Utorak OK OK\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    {\/\/AT12 string operator\n        Datum d(1,2,2018);\n        std::string s = d;\n        Datum d2(31,5,2018);\n\n        std::cout << s << std::endl << std::string(d2) << std::endl;\n\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1. Februar 2018. (Cetvrtak)\n31. Maj 2018. (Cetvrtak)\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 14,
+            "name": "Test 14",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    {\/\/AT13 operator int\n        Datum d(1,1,1800);\n        std::cout << int(d) << std::endl;\n        d+=365;\n        std::cout << int(d) << std::endl;\n        std::cout << std::is_convertible<Datum, int>::value << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": [],
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 15,
+            "name": "Test 15",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    {\/\/AT14 metode Postavi, DajImeMjeseca, DanUSedmici\n        Datum d(1,1,2016);\n        std::cout << d.DajImeMjeseca() << \" \" << d.DajImeDanaUSedmici() << std::endl;\n        try{\n            d.Postavi(1,1,1790);\n        }\n        catch(std::domain_error &ex){\n            std::cout << ex.what() << std::endl;\n        }\n        d.Postavi(2,2,2017);\n        std::cout << d << std::endl;\n        d.Postavi(3, Datum::Mart, 2018);\n        std::cout << d << std::endl;\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Januar Petak\nNelegalan datum\n2. Februar 2017. (Cetvrtak)\n3. Mart 2018. (Subota)\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

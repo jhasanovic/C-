@@ -1,0 +1,719 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 4, Zadatak 5",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/eventualne gre\u0161ke u testovima javiti na kerim.hodzic@etf.unsa.ba    \n\/\/AT1 - (javni) Test klase Student - konstruktori\n    Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    Student s2(12346, \"1\/M\", \"    Neko  Nekic    \", \"Bascarsija 2\", \"1\/1-1\");\n    Student s3(12347, \"1\/D\", \"  Neko   Nekic   \", \"Bascarsija 3\", \"1\/1-1\");\n    Student s4(12348, \"1\", \"Neko   Nekic\", \"Bascarsija 4\", \"1\/1-1\");\n    Student s5(12349, \"3\", \"    Neko Nekic    \", \"Bascarsija 5\", \"1\/1-1\");\n    std::cout << \"OK\";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT2 - Test klase Student - geteri\n    Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    Student s2(12346, \"1\/M\", \"    Neko  Nekic    \", \"Bascarsija 2\", \"1\/1-1\");\n    Student s3(12347, \"1\/D\", \"  Neko   Nekic   \", \"Bascarsija 3\", \"1\/1-1\");\n    Student s4(12348, \"1\", \"Neko   Nekic\", \"Bascarsija 4\", \"1\/1-1\");\n    \n    int i{12349};\n    std::string st1{\"3\"}, st2{\"    Neko Nekic    \"}, st3{\"Bascarsija 5\"}, st4{\"1\/1-1\"};\n    Student s5(i, st1, st2, st3, st4);\n    \n    std::cout << s1.DajIndeks() << \" \" << s1.DajImePrezime() << \" \" << s1.DajGodinuStudija() << \" \" << s1.DajAdresu() << \" \" << s1.DajTelefon() << std::endl;\n    std::cout << s2.DajIndeks() << \" \" << s2.DajImePrezime() << \" \" << s2.DajGodinuStudija() << \" \" << s2.DajAdresu() << \" \" << s2.DajTelefon() << std::endl;\n    std::cout << s3.DajIndeks() << \" \" << s3.DajImePrezime() << \" \" << s3.DajGodinuStudija() << \" \" << s3.DajAdresu() << \" \" << s3.DajTelefon() << std::endl;\n    std::cout << s4.DajIndeks() << \" \" << s4.DajImePrezime() << \" \" << s4.DajGodinuStudija() << \" \" << s4.DajAdresu() << \" \" << s4.DajTelefon() << std::endl;\n    std::cout << s5.DajIndeks() << \" \" << s5.DajImePrezime() << \" \" << s5.DajGodinuStudija() << \" \" << s5.DajAdresu() << \" \" << s5.DajTelefon() << std::endl;"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "12345 Neko Nekic 1\/B Bascarsija 1 1\/1-1\n12346 Neko Nekic 1\/M Bascarsija 2 1\/1-1\n12347 Neko Nekic 1\/D Bascarsija 3 1\/1-1\n12348 Neko Nekic 1\/B Bascarsija 4 1\/1-1\n12349 Neko Nekic 3\/B Bascarsija 5 1\/1-1\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT3 -  Test klase Student - metoda Ispisi\n    Student s1(12345, \"1\/D\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    Student s2(12346, \"1\", \"    Neko  Nekic    \", \"Bascarsija 2\", \"1\/1-1\");\n    s1.Ispisi();\n    std::cout << std::endl;\n    s2.Ispisi();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj indeksa: 12345\nGodina studija: 1\/D\nIme i prezime: Neko Nekic\nAdresa: Bascarsija 1\nTelefon: 1\/1-1\n\nBroj indeksa: 12346\nGodina studija: 1\/B\nIme i prezime: Neko Nekic\nAdresa: Bascarsija 2\nTelefon: 1\/1-1\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/AT Test klase Student - bacanje izuzetaka\n    \n    try\n    {\n        Student s1(1234, \"1\/D\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }\n    \n    try\n    {\n        Student s1(12345, \"1\/F\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }\n    \n    try\n    {\n        Student s1(12345, \"4\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }\n    \n    try\n    {\n        Student s1(12345, \"4\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }\n    \n    try\n    {\n        Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1-1-1\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }\n    \n    try\n    {\n        Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1\/1\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }\n    \n    try\n    {\n        Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"111\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Neispravni parametri\nIzuzetak: Neispravni parametri\nIzuzetak: Neispravni parametri\nIzuzetak: Neispravni parametri\nIzuzetak: Neispravni parametri\nIzuzetak: Neispravni parametri\nIzuzetak: Neispravni parametri\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT5 - Test klase Laptop - konstruktor\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    int i{234};\n    std::string s1{\"DELL XPS 13\"}, s2{\"Intel CPU 3.5 GHz, 8 GB RAM\"};\n    Laptop l2 (i, s1, s2);\n    std::cout << \"OK\";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "_main();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n12345\n2\/M\nMarljivi Student\nUlica marljivih studenata bb\n061 616 307\nK"
+                },
+                "expect": [
+                    "Odaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\nUnesite broj indeksa: \nUnesite godinu studija (formata A\/X, gdje je A godina studija, a X prima vrijednosti B,M,D, zavisno od studija): \nUnesite ime i prezime studenta: \nUnesite adresu studenta: \nUnesite broj telefona (formata x\/x-x): \nIzuzetak: Neispravni parametri!\nOdaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n12345\n2\/M\nMarljivi Student\nUlica marljivih studenata bb\n061 616 307\nK"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n12345\n2\/M\nMarljivi Student\nUlica marljivih studenata bb\n061 616 307\nK"
+                }
+            }
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "_main();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n928912\nLaptop za TP\nPola laptop - Pola workspace\n4\nK\n"
+                },
+                "expect": [
+                    "Odaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\nUnesite evidencijski broj laptopa \nUnesite naziv laptopa \nUnesite karakteristike laptopa: \nLaptop uspjesno registrovan!\nOdaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\nEvidencijski broj: 928912\nNaziv: Laptop za TP\nKarakteristike: Pola laptop - Pola workspace\n\n\nOdaberite jednu od  sljedecih opcija: \n1 - RegistrirajNovogStudenta\n2 - RegistrirajNoviLaptop\n3 - IzlistajStudente\n4 - IzlistajLaptope\n5 - NadjiSlobodniLaptop\n6 - ZaduziLaptop\n7 - RazduziLaptop\n8 - PrikaziZaduzenja\nK - Kraj programa\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n928912\nLaptop za TP\nPola laptop - Pola workspace\n4\nK\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n928912\nLaptop za TP\nPola laptop - Pola workspace\n4\nK\n"
+                }
+            }
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  \/\/AT - Test klase Laptop - geteri\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    std::cout << l1.DajEvidencijskiBroj() << \" \" << l1.DajNaziv() << l1.DajKarakteristike();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "123 ASUS X554LIntel CPU 2.4 GHz, 8 GB RAM"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 10,
+            "name": "Test 10",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Laptop - metoda Ispisi\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    l1.Ispisi();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Evidencijski broj: 123\nNaziv: ASUS X554L\nKarakteristike: Intel CPU 2.4 GHz, 8 GB RAM\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 11,
+            "name": "Test 11",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Laptop - metoda DaLiJeZaduzen\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    std::cout << l1.DaLiJeZaduzen();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "0"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 12,
+            "name": "Test 12",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Laptop - bacanje izuzetaka\n    \n    try\n    {\n        Laptop l1 (-123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka.\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": [],
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 13,
+            "name": "Test 13",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Laptop - metoda Zaduzi\n    \n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    \n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl ;\n        \n    l1.Zaduzi(s1) ;\n\n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl;"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Laptop nije zaduzen\nLaptop je zaduzen"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 14,
+            "name": "Test 14",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Laptop - metoda Zaduzi (izuzetak)\n    \n    try\n    {\n        Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n        Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        Student s2(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        l1.Zaduzi(s1);\n        std::cout << \"OK\" << std::endl;\n        l1.Zaduzi(s2);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK\nIzuzetak: Laptop vec zaduzen\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 15,
+            "name": "Test 15",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Laptop - metoda Razduzi\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    l1.Zaduzi(s1);\n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl;\n    l1.Razduzi();\n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl;"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Laptop je zaduzen\nLaptop nije zaduzen\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 16,
+            "name": "Test 16",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "   \/\/AT Test klase Laptop - metoda DajKodKogaJe\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    l1.Zaduzi(s1);\n    l1.DajKodKogaJe().Ispisi();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj indeksa: 12345\nGodina studija: 1\/B\nIme i prezime: Neko Nekic\nAdresa: Bascarsija 1\nTelefon: 1\/1-1\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 17,
+            "name": "Test 17",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "   \/\/AT Test klase Laptop - \n        \/\/metoda Razduzi nad laptopom koji nije zaduzen\n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    Student s1(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n    l1.Zaduzi(s1);\n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl;\n    l1.Razduzi();\n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl;\n    l1.Razduzi();\n    if (l1.DaLiJeZaduzen()) \n        std::cout<< \"Laptop je zaduzen\" << std::endl ;\n    else \n        std::cout<< \"Laptop nije zaduzen\" << std::endl;"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Laptop je zaduzen\nLaptop nije zaduzen\nLaptop nije zaduzen\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 18,
+            "name": "Test 18",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT15 Test klase Laptop - metoda DajKodKogaJe - izuzetak\n    \n    Laptop l1 (123, \"ASUS X554L\", \"Intel CPU 2.4 GHz, 8 GB RAM\");\n    try\n    {\n        l1.DajKodKogaJe().Ispisi();\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Laptop nije zaduzen\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 19,
+            "name": "Test 19",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    \/\/ Test klase Administracija - NadjiLaptop (izuzetak)\n    \n    try\n    {\n        Administracija admin;\n        admin.NadjiLaptop(123);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Laptop nije nadjen"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 20,
+            "name": "Test 20",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "   \/\/AT Test klase Administracija - NadjiStudenta (izuzetak)\n    \n    try\n    {\n        Administracija admin;\n        admin.NadjiStudenta(123);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }\n    \n    try\n    {\n        Administracija admin;\n        admin.NadjiStudenta(12345);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Student nije nadjen\nIzuzetak: Student nije nadjen\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 21,
+            "name": "Test 21",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  \/\/AT Test klase Administracija - IzlistajLaptope (prazno)\n    Administracija admin;\n    admin.IzlistajLaptope();\n    admin.IzlistajStudente();\n    std::cout << \"OK\";"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 22,
+            "name": "Test 22",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    \/\/AT Test klase Administracija - ZaduziLaptop (prazno, izuzetak)\n    \n    try\n    {\n        Administracija admin;\n        admin.ZaduziLaptop(123, 12345);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }\n    \n    try\n    {\n        Administracija admin;\n        admin.RegistrirajNovogStudenta(12345, \"1\/B\", \"Neko Nekic\", \"Bascarsija 1\", \"1\/1-1\");\n        admin.ZaduziLaptop(12345, 123);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what() << std::endl;\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Student nije nadjen\nIzuzetak: Laptop nije nadjen\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 23,
+            "name": "Test 23",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    Administracija etf ;\n\n    etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n    etf.RegistrirajNoviLaptop(331, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n    etf.RegistrirajNoviLaptop(122, \"Dell 2\", \"CPU 3.2 GHz, 6 GB RAM\");\n    etf.RegistrirajNovogStudenta(14212, \"1\", \"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n    etf.RegistrirajNovogStudenta(17528, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n    \n    etf.IzlistajStudente();\n    \n    etf.IzlistajLaptope();\n\n    etf.ZaduziLaptop(14212, 123);\n    etf.ZaduziLaptop(17528, 331);\n    \n    etf.PrikaziZaduzenja();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj indeksa: 14212\nGodina studija: 1\/B\nIme i prezime: Benjamin\nAdresa: Francuska revolucija 23\nTelefon: 12\/34-56\n\nBroj indeksa: 17528\nGodina studija: 2\/B\nIme i prezime: Ivan\nAdresa: Trg vjecnih studenata 12\nTelefon: 048\/597-585\n\nEvidencijski broj: 122\nNaziv: Dell 2\nKarakteristike: CPU 3.2 GHz, 6 GB RAM\n\nEvidencijski broj: 123\nNaziv: Dell\nKarakteristike: CPU 3.0 GHz, 4 GB RAM\n\nEvidencijski broj: 331\nNaziv: ASUS\nKarakteristike: CPU 3.5 GHz, 2 GB RAM\t\n\nStudent Benjamin (14212) zaduzio\/la laptop broj 123\nStudent Ivan (17528) zaduzio\/la laptop broj 331\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 24,
+            "name": "Test 24",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    try\n    {\n        Administracija etf;\n        etf.PrikaziZaduzenja();\n        etf.RegistrirajNovogStudenta(14212, \"1\", \"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n        etf.RegistrirajNovogStudenta(14212, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Nema zaduzenja\nIzuzetak: Student s tim indeksom vec postoji"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 25,
+            "name": "Test 25",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  \/\/AT Test klase Administracija - RegistrirajNoviLaptop  \n        \/\/kada vec postoji laptop sa tim ev. brojem\n    \n    try\n    {\n        Administracija etf;\n        etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n        etf.RegistrirajNoviLaptop(123, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Laptop s tim evidencijskim brojem vec postoji"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 26,
+            "name": "Test 26",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "   \/\/AT30 Test klase Administracija - RazduziLaptop (prazno)\n        \n    try\n    {\n        Administracija etf;\n        etf.RazduziLaptop(123);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Laptop nije nadjen"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 27,
+            "name": "Test 27",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\t\n    \/\/AT Test klase Administracija - RazduziLaptop (nije zaduzen)\n        \n    try\n    {\n        Administracija etf;\n        etf.RegistrirajNoviLaptop(123, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n        etf.RazduziLaptop(123);\n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Laptop nije zaduzen"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 28,
+            "name": "Test 28",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "   \/\/AT Test klase Administracija - student nije nadjen\n        \n    try\n    {\n        Administracija etf;\n        etf.RegistrirajNovogStudenta(14212, \"1\", \"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n        etf.RegistrirajNovogStudenta(17528, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n        etf.RegistrirajNovogStudenta(12345, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n        \n        etf.NadjiStudenta(66666);\n        \n        \n        std::cout << \"Ovo se ne smije ispisati.\";\n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Izuzetak: Student nije nadjen"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 29,
+            "name": "Test 29",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "  Administracija etf;\n    etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n    etf.RegistrirajNoviLaptop(331, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n    etf.RegistrirajNoviLaptop(122, \"Dell 2\", \"CPU 3.2 GHz, 6 GB RAM\");\n    etf.NadjiLaptop(123).Ispisi();\n etf.RegistrirajNovogStudenta(14212, \"1\", \"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n    etf.RegistrirajNovogStudenta(17528, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n    etf.RegistrirajNovogStudenta(12345, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n    etf.NadjiStudenta(14212).Ispisi();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Evidencijski broj: 123\nNaziv: Dell\nKarakteristike: CPU 3.0 GHz, 4 GB RAM\nBroj indeksa: 14212\nGodina studija: 1\/B\nIme i prezime: Benjamin\nAdresa: Francuska revolucija 23\nTelefon: 12\/34-56\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 30,
+            "name": "Test 30",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Administracija - ZaduziLaptop (izuzetak)\n        \n    try\n    {\n        Administracija etf;\n        etf.RegistrirajNovogStudenta(14212, \"1\", \"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n        etf.RegistrirajNovogStudenta(17528, \"2\", \"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n        etf.RegistrirajNovogStudenta(12345, \"2\", \"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n        etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n        etf.RegistrirajNoviLaptop(331, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n        etf.RegistrirajNoviLaptop(312, \"Dell 2\", \"CPU 3.2 GHz, 6 GB RAM\");\n        etf.ZaduziLaptop(14212, 312);\n        std::cout << etf.NadjiSlobodniLaptop() << std::endl;\n         etf.ZaduziLaptop(14212, 331);\n        std::cout << \"Ovo se ne smije ispisati.\";\n        \n    } catch (const std::domain_error& e)\n    {\n        std::cout << \"Izuzetak: \" << e.what();\n    } catch (...)\n    {\n        std::cout << \"Pogresan tip izuzetka!\";\n    }"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "123\nIzuzetak: Student je vec zaduzio laptop"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 31,
+            "name": "Test 31",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    Administracija etf;\n\n    etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n    etf.RegistrirajNoviLaptop(331, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n    etf.RegistrirajNoviLaptop(312, \"Dell 2\", \"CPU 3.2 GHz, 6 GB RAM\");\n\n    etf.RegistrirajNovogStudenta(14212, \"1\",\"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n    etf.RegistrirajNovogStudenta(17528, \"2\/M\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n    etf.RegistrirajNovogStudenta(17525, \"3\/D\",\"Ante\" ,\"Trg vjecnih studenata 11\", \"062\/582-757\");\n\n    etf.ZaduziLaptop(14212,123);\n\n    if (etf.NadjiLaptop(123).DaLiJeZaduzen()) \n        std::cout<< \"OK\" << std::endl;\n    else \n        std::cout<<\"NOT OK\" << std::endl;\n\n    etf.RazduziLaptop(123);\n    etf.ZaduziLaptop(14212,312); \/\/ Ne treba da baci izuzetak, posto je laptop razduzen\n\n    if (etf.NadjiLaptop(123).DaLiJeZaduzen()) \n        std::cout<<\"NOT OK\"<< std::endl;\n    else \n        std::cout<<\"OK\"<< std::endl;"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK\nOK"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 32,
+            "name": "Test 32",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/ Test klase Administracija - pomjerajuci konstruktor kopije\n\n     Administracija etf;\n\n    etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n    etf.RegistrirajNoviLaptop(331, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n    etf.RegistrirajNoviLaptop(122, \"Dell 2\", \"CPU 3.2 GHz, 6 GB RAM\");\n\n\n    etf.RegistrirajNovogStudenta(14212, \"1\",\"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n    etf.RegistrirajNovogStudenta(17528, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n    etf.RegistrirajNovogStudenta(17525, \"3\", \"Ante\" ,\"Trg vjecnih studenata 11\", \"062\/582-757\");\n\n    etf.ZaduziLaptop(14212, 122);\n    etf.ZaduziLaptop(17525,331);\n\n    Administracija etf_2 (std::move(etf));\n\n    etf_2.IzlistajStudente();\n    std::cout <<std::endl ;\n    etf_2.IzlistajLaptope();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj indeksa: 14212\nGodina studija: 1\/B\nIme i prezime: Benjamin\nAdresa: Francuska revolucija 23\nTelefon: 12\/34-56\n\nBroj indeksa: 17525\nGodina studija: 3\/B\nIme i prezime: Ante\nAdresa: Trg vjecnih studenata 11\nTelefon: 062\/582-757\n\nBroj indeksa: 17528\nGodina studija: 2\/B\nIme i prezime: Ivan\nAdresa: Trg vjecnih studenata 12\nTelefon: 048\/597-585\n\n\nEvidencijski broj: 122\nNaziv: Dell 2\nKarakteristike: CPU 3.2 GHz, 6 GB RAM\nZaduzio(la): Benjamin (14212)\n\nEvidencijski broj: 123\nNaziv: Dell\nKarakteristike: CPU 3.0 GHz, 4 GB RAM\n\nEvidencijski broj: 331\nNaziv: ASUS\nKarakteristike: CPU 3.5 GHz, 2 GB RAM\nZaduzio(la): Ante (17525)\n\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 33,
+            "name": "Test 33",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "    \/\/AT Test klase Administracija - pomjerajuci operator dodjele\n\n    Administracija etf;\n\n    etf.RegistrirajNoviLaptop(123, \"Dell\", \"CPU 3.0 GHz, 4 GB RAM\");\n    etf.RegistrirajNoviLaptop(331, \"ASUS\", \"CPU 3.5 GHz, 2 GB RAM\");\n    etf.RegistrirajNoviLaptop(122, \"Dell 2\", \"CPU 3.2 GHz, 6 GB RAM\");\n\n\n    etf.RegistrirajNovogStudenta(14212, \"1\",\"Benjamin\", \"Francuska revolucija 23\", \"12\/34-56\");\n    etf.RegistrirajNovogStudenta(17528, \"2\",\"Ivan\", \"Trg vjecnih studenata 12\", \"048\/597-585\");\n    etf.RegistrirajNovogStudenta(17525, \"3\", \"Ante\" ,\"Trg vjecnih studenata 11\", \"062\/582-757\");\n\n    etf.ZaduziLaptop(14212, 122);\n    etf.ZaduziLaptop(17525,331);\n\n    Administracija etf_2016;\n\n    etf_2016.RegistrirajNovogStudenta(17531, \"3\",\"Bill\",\"Albanska\", \"063\/451-758\");\n    etf_2016.RegistrirajNovogStudenta(17648, \"2\",\"Johny\",\"Francuska revolucija 54\", \"024\/685-658\");\n\n\n    etf_2016.RegistrirajNoviLaptop(432,\"Toshiba\", \"CPU 3.2 GHz, 8 GB RAM\");\n    etf_2016.RegistrirajNoviLaptop(132,\"Lenovo\", \"CPU 2.0 GHz, 4 GB RAM\");\n\n    etf_2016.ZaduziLaptop(17648,432);\n    etf_2016.ZaduziLaptop(17531,132);\n\n    etf = std::move(etf_2016);\n\n    etf.IzlistajStudente();\n    std::cout<<std::endl;\n    etf.IzlistajLaptope();"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Broj indeksa: 17531\nGodina studija: 3\/B\nIme i prezime: Bill\nAdresa: Albanska\nTelefon: 063\/451-758\n\nBroj indeksa: 17648\nGodina studija: 2\/B\nIme i prezime: Johny\nAdresa: Francuska revolucija 54\nTelefon: 024\/685-658\n\n\nEvidencijski broj: 132\nNaziv: Lenovo\nKarakteristike: CPU 2.0 GHz, 4 GB RAM\nZaduzio(la): Bill (17531)\n\nEvidencijski broj: 432\nNaziv: Toshiba\nKarakteristike: CPU 3.2 GHz, 8 GB RAM\nZaduzio(la): Johny (17648)\n\n\t"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        }
+    ]
+}

@@ -1,0 +1,216 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 3, Zadatak 1",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/*\n\tAutor autotestova za zadatak 1 je Kemal Altwlkany.\n\tZa sva pitanja javiti se na kaltwlkany1@etf.unsa.ba\n*\/\n\/\/ AT 01 - main iz postavke za prvi tip linearne interpolacije\n{\n\t_main();\n}\n"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n5\n1 3\n2 5\n4 4\n5 2\n7 1\n2.5\n7\n1.5\n5.32\nkraj\n"
+                },
+                "expect": [
+                    "Odaberite opciju (1 - unos cvorova, 2 - aproksimacija): \nUnesite broj cvorova: \nUnesite cvorove kao parove x i y:\nUnesite argument (ili \"kraj\" za kraj): \nf(2.5) = 4.75\nUnesite argument (ili \"kraj\" za kraj): \nf(7) = 1\nUnesite argument (ili \"kraj\" za kraj): \nf(1.5) = 4\nUnesite argument (ili \"kraj\" za kraj): \nf(5.32) = 1.84\nUnesite argument (ili \"kraj\" za kraj): "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n5\n1 3\n2 5\n4 4\n5 2\n7 1\n2.5\n7\n1.5\n5.32\nkraj\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n5\n1 3\n2 5\n4 4\n5 2\n7 1\n2.5\n7\n1.5\n5.32\nkraj\n"
+                }
+            }
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 02 - neispravni cvorovi\n{\n\t_main();\n}"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "1\n6\n1.01 10\n1.02 20\n1.03 30\n1.04 40\n1.05 50\n1.04 40"
+                },
+                "expect": [
+                    "Odaberite opciju (1 - unos cvorova, 2 - aproksimacija): \nUnesite broj cvorova: \nUnesite cvorove kao parove x i y:\nNeispravni cvorovi."
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "1\n6\n1.01 10\n1.02 20\n1.03 30\n1.04 40\n1.05 50\n1.04 40"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "1\n6\n1.01 10\n1.02 20\n1.03 30\n1.04 40\n1.05 50\n1.04 40"
+                }
+            }
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 09 - main iz postavke za drugi tip linearne interpolacije\n{\n\t_main();\n}\n"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n0 1 0.1\n0.3\n0.57\n5\n0.23\nkraj"
+                },
+                "expect": [
+                    "Odaberite opciju (1 - unos cvorova, 2 - aproksimacija): \nUnesite krajeve intervala i korak: \nUnesite argument (ili \"kraj\" za kraj): \nf(0.3) = 0.38552 f_approx(0.3) = 0.38552\nUnesite argument (ili \"kraj\" za kraj): \nf(0.57) = 0.864532 f_approx(0.57) = 0.866077\nUnesite argument (ili \"kraj\" za kraj): \nArgument izvan opsega.\nUnesite argument (ili \"kraj\" za kraj): \nf(0.23) = 0.280878 f_approx(0.23) = 0.282725\nUnesite argument (ili \"kraj\" za kraj): "
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n0 1 0.1\n0.3\n0.57\n5\n0.23"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n0 1 0.1\n0.3\n0.57\n5\n0.23"
+                }
+            }
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 10 - x_min > x_max\n{\n\t_main();\n}\n"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n5 3 0.1"
+                },
+                "expect": [
+                    "Odaberite opciju (1 - unos cvorova, 2 - aproksimacija): \nUnesite krajeve intervala i korak: \nNekorektni parametri.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n5 3 0.1"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n5 3 0.1"
+                }
+            }
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 11 - dx < 0\n{\n\t_main();\n}\n"
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "2\n30 50 -2"
+                },
+                "expect": [
+                    "Odaberite opciju (1 - unos cvorova, 2 - aproksimacija): \nUnesite krajeve intervala i korak: \nNekorektni parametri.\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "2\n30 50 -2"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "2\n30 50 -2"
+                }
+            }
+        }
+    ]
+}

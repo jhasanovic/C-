@@ -1,0 +1,124 @@
+==5755== Memcheck, a memory error detector
+==5755== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==5755== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==5755== Command: /rhome/j/jhasanovic1/workspace/TP/Z2/Z5/.runme
+==5755== Parent PID: 5736
+==5755== 
+==5755== Invalid read of size 8
+==5755==    at 0x10A658: IzlistajOptuzbu(char**, int) (main.cpp:111)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d80220 is 0 bytes inside a block of size 16 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F2C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:35)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109CFF: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:14)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== Invalid read of size 8
+==5755==    at 0x10A680: IzlistajOptuzbu(char**, int) (main.cpp:112)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d80220 is 0 bytes inside a block of size 16 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F2C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:35)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109CFF: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:14)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== Invalid read of size 1
+==5755==    at 0x4C32D32: __strlen_sse2 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x5165406: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x10A695: IzlistajOptuzbu(char**, int) (main.cpp:112)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d80270 is 0 bytes inside a block of size 11 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F13: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:34)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109D8C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:16)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== Invalid read of size 1
+==5755==    at 0x4C32D44: __strlen_sse2 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x5165406: std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::basic_string(char const*, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x10A695: IzlistajOptuzbu(char**, int) (main.cpp:112)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d80271 is 1 bytes inside a block of size 11 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F13: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:34)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109D8C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:16)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== Invalid read of size 8
+==5755==    at 0x4C34160: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x51652C6: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x10A695: IzlistajOptuzbu(char**, int) (main.cpp:112)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d80270 is 0 bytes inside a block of size 11 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F13: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:34)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109D8C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:16)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== Invalid read of size 2
+==5755==    at 0x4C340D0: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x51652C6: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x10A695: IzlistajOptuzbu(char**, int) (main.cpp:112)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d80278 is 8 bytes inside a block of size 11 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F13: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:34)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109D8C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:16)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== Invalid read of size 1
+==5755==    at 0x4C34108: memcpy@GLIBC_2.2.5 (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x51652C6: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x10A695: IzlistajOptuzbu(char**, int) (main.cpp:112)
+==5755==    by 0x10A8DF: main (main.cpp:137)
+==5755==  Address 0x5d802ca is 10 bytes inside a block of size 12 free'd
+==5755==    at 0x4C3173B: operator delete[](void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109F13: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:34)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755==  Block was alloc'd at
+==5755==    at 0x4C3089F: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==5755==    by 0x109D8C: PotencijalniKrivci(char**&, std::vector<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > > >) (main.cpp:16)
+==5755==    by 0x10A844: main (main.cpp:134)
+==5755== 
+==5755== 
+==5755== Process terminating with default action of signal 1 (SIGHUP)
+==5755==    at 0x56EF191: read (read.c:27)
+==5755==    by 0x566C1B7: _IO_file_underflow@@GLIBC_2.2.5 (fileops.c:531)
+==5755==    by 0x566D461: _IO_default_uflow (genops.c:380)
+==5755==    by 0x512B7EC: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x50EA078: std::basic_istream<char, std::char_traits<char> >& std::getline<char, std::char_traits<char>, std::allocator<char> >(std::basic_istream<char, std::char_traits<char> >&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&, char) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.25)
+==5755==    by 0x10A911: main (main.cpp:140)
+==5755== 
+==5755== HEAP SUMMARY:
+==5755==     in use at exit: 64 bytes in 1 blocks
+==5755==   total heap usage: 8 allocs, 7 frees, 73,927 bytes allocated
+==5755== 
+==5755== LEAK SUMMARY:
+==5755==    definitely lost: 0 bytes in 0 blocks
+==5755==    indirectly lost: 0 bytes in 0 blocks
+==5755==      possibly lost: 0 bytes in 0 blocks
+==5755==    still reachable: 64 bytes in 1 blocks
+==5755==         suppressed: 0 bytes in 0 blocks
+==5755== Reachable blocks (those to which a pointer was found) are not shown.
+==5755== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==5755== 
+==5755== For counts of detected and suppressed errors, rerun with: -v
+==5755== ERROR SUMMARY: 32 errors from 7 contexts (suppressed: 0 from 0)

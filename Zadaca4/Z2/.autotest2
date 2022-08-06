@@ -1,0 +1,280 @@
+{
+    "id": 0,
+    "name": "Tehnike programiranja (2020\/2021), Zada\u0107a 4, Zadatak 2",
+    "languages": [
+        "C++"
+    ],
+    "tools": {
+        "compile": {
+            "require": "g++",
+            "features": [
+                "optimize",
+                "warn",
+                "pedantic",
+                "C++14"
+            ]
+        },
+        "compile[debug]": {
+            "require": "g++",
+            "features": [
+                "debug",
+                "C++14"
+            ]
+        },
+        "execute": {
+            "environment": {
+                "timeout": 10,
+                "memory": 1000000
+            }
+        },
+        "debug": [],
+        "profile[memcheck]": {
+            "require": "valgrind",
+            "features": [
+                "memcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        },
+        "profile[sgcheck]": {
+            "require": "valgrind",
+            "features": [
+                "sgcheck"
+            ],
+            "environment": {
+                "timeout": 10
+            }
+        }
+    },
+    "tests": [
+        {
+            "id": 1,
+            "name": "Test 1",
+            "options": [
+                "silent",
+                "terminate"
+            ],
+            "compile": []
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 1: Test prvog konstruktora (osnovni) i metoda DajImeIPrezime, DajJMBG, DajDanRodjenja, DajMjesecRodjenja, DajGodinuRodjenja, DajSifruRegije, DajPol\n    {\n        GradjaninBiH g1(\"Brus Li Ramadanovic\", 1212992170000);\n        std::cout << \"Ime i prezime: \" << g1.DajImeIPrezime() << std::endl;\n        std::cout << \"JMBG: \" << g1.DajJMBG() << std::endl;\n        std::cout << \"Datum rodjenja: \" << g1.DajDanRodjenja() << \"\/\" << g1.DajMjesecRodjenja() << \"\/\" << g1.DajGodinuRodjenja() << std::endl;\n        std::cout << \"Regija: \" << g1.DajSifruRegije() << std::endl;\n        std::cout << \"Pol: \" << g1.DajPol() << std::endl;\n\n        GradjaninBiH g2(\"Lima Zulu\", 1412994185004);\n        std::cout << \"Ime i prezime: \" << g2.DajImeIPrezime() << std::endl;\n        std::cout << \"JMBG: \" << g2.DajJMBG() << std::endl;\n        std::cout << \"Datum rodjenja: \" << g2.DajDanRodjenja() << \"\/\" << g2.DajMjesecRodjenja() << \"\/\" << g2.DajGodinuRodjenja() << std::endl;\n        std::cout << \"Regija: \" << g2.DajSifruRegije() << std::endl;\n        std::cout << \"Pol: \" << g2.DajPol() << std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Ime i prezime: Brus Li Ramadanovic\nJMBG: 1212992170000\nDatum rodjenja: 12\/12\/1992\nRegija: 17\nPol: 0\nIme i prezime: Lima Zulu\nJMBG: 1412994185004\nDatum rodjenja: 14\/12\/1994\nRegija: 18\nPol: 1\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 3,
+            "name": "Test 3",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 2: Test drugog konstruktora (osnovni)\n    {\n        GradjaninBiH g1(\"Rambo Sulejmanovic\", 12, 12, 1992, 17, GradjaninBiH::Pol::Musko);\n        std::cout << g1.DajJMBG() << std::endl;\n        GradjaninBiH g2(\"Lima Zulu\", 14, 12, 1994, 18, GradjaninBiH::Pol::Zensko);\n        std::cout << g2.DajJMBG() << std::endl;\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1212992170000\n1412994185004\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 4,
+            "name": "Test 4",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 3: Test metode PromijeniImeIPrezime\n\t{\n\t\tstd::string ime = \"Brus Li Ramadanovic\";\n\t\tGradjaninBiH g(ime, 1212992170000);\n\t\tstd::cout << \"Ime prije promjene: \" << g.DajImeIPrezime() << std::endl;\n\t\tg.PromijeniImeIPrezime(\"Cak Noris Bicakcic\");\n\t\tstd::cout << \"Ime nakon promjene: \" << g.DajImeIPrezime() << std::endl;\n\t}",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Ime prije promjene: Brus Li Ramadanovic\nIme nakon promjene: Cak Noris Bicakcic\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 5,
+            "name": "Test 5",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 4: Test prvog konstruktora - izuzetak \"Vec postoji gradjanin sa istim JMBG\"\n    {\n        GradjaninBiH g1(\"Rambo Sulejmanovic\", 1412994170023);\n        std::cout << g1.DajJMBG() << std::endl;\n        try\n        {\n            GradjaninBiH g2(\"Zan Klod Sejdic\", 1412994170023);\n            std::cout << g2.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "1412994170023\nVec postoji gradjanin sa istim JMBG\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 6,
+            "name": "Test 6",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 5: Test prvog konstruktora - izuzetak \"JMBG nije validan\"\n    {\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 3212994170023);\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 3113994170023);\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 2902001170023);\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 1001989175115);\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Pogresan izuzetak\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "JMBG nije validan\nJMBG nije validan\nJMBG nije validan\nJMBG nije validan\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 7,
+            "name": "Test 7",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 6: Test drugog konstruktora - izuzetak \"Neispravni podaci\"\n    {\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 32, 12, 1992, 17, GradjaninBiH::Pol::Musko);;\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 14, 14, 1992, 17, GradjaninBiH::Pol::Musko);;\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 14, 12, 1992, -17, GradjaninBiH::Pol::Musko);;\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n        try\n        {\n            GradjaninBiH g(\"Zan Klod Sejdic\", 14, 12, 1992, 117, GradjaninBiH::Pol::Musko);;\n            std::cout << g.DajJMBG() << std::endl;\n        }\n        catch (std::logic_error e)\n        {\n            std::cout << e.what() << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "Neispravni podaci\nNeispravni podaci\nNeispravni podaci\nNeispravni podaci\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 8,
+            "name": "Test 8",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 7: Test destruktora - brisanje posljednjeg\n    {\n        GradjaninBiH g1(\"Rambo Sulejmanovic\", 14, 12, 1994, 17, GradjaninBiH::Pol::Musko);\n        GradjaninBiH g2(\"Zan Klod Sejdic\", 17, 12, 1994, 19, GradjaninBiH::Pol::Musko);\n        {\n            GradjaninBiH g3(\"Cak Noris Bicakcic\", 1010992170009);\n        }\n        try\n        {\n            GradjaninBiH g3(\"Cak Noris Bicakcic\", 1010992170009);\n            std::cout << \"OK, obrisan posljednji!\" << std::endl;\n        }\n        catch (...)\n        {\n            std::cout << \"Not OK, nije obrisan posljednji!\" << std::endl;\n        }\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "expect": [
+                    "OK, obrisan posljednji!\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": [],
+            "profile[sgcheck]": []
+        },
+        {
+            "id": 9,
+            "name": "Test 9",
+            "patch": [
+                {
+                    "position": "top_of_file",
+                    "code": "\/\/ Tehnike programiranja - Akademska 2020\/2021 godina\n\/\/ Zadaca 4 - Zadatak 2\n\/\/ Odgovorni asistenti: Mediha Zukic - mz14970@etf.unsa.ba ; Haris Capelj - hcapelj1@etf.unsa.ba\n\/\/ Za sva tehnicka pitanja vezana za autotestove za zadatak 2, obratite se na navedene mailove.",
+                    "use_markers": true
+                },
+                {
+                    "position": "main",
+                    "code": "\/\/ AT 8: Test main-a\n    {\n        _main();\n    }",
+                    "use_markers": true
+                }
+            ],
+            "compile": [],
+            "compile[debug]": [],
+            "execute": {
+                "environment": {
+                    "stdin": "3\nRambo Sulejmanovic\n3005017180005\nZan Klod Sejdic\n2905017170007\nCak Noris Bicakcic\n1234567891234\nLima Zulu\n1612994175008\n3\nMickey Mouse\n16\/12\/1994\n17\nM\nMinnie Mouse\n14\/12\/1994\n18\nZ\nDonald Fauntleroy Duck\n12\/14\/1992\n17\nM\nDonald Fauntleroy Duck\n12\/12\/1992\n17\nM\n"
+                },
+                "expect": [
+                    "Unesite broj gradjana koje zelite unijeti po JMBG: \nUnos podataka za 1. gradjanina\nUnesite ime i prezime (u istom redu): Unesite JMBG: Ime i prezime: Rambo Sulejmanovic, JMBG: 3005017180005 \n\nUnos podataka za 2. gradjanina\nUnesite ime i prezime (u istom redu): Unesite JMBG: Ime i prezime: Zan Klod Sejdic, JMBG: 2905017170007\n\nUnos podataka za 3. gradjanina\nUnesite ime i prezime (u istom redu): Unesite JMBG: JMBG nije validan\n\nUnos podataka za 3. gradjanina\nUnesite ime i prezime (u istom redu): Unesite JMBG: Ime i prezime: Lima Zulu, JMBG: 1612994175008\n\nUnesite broj gradjana koje zelite unijeti po datumu rodjenja, regiji i polu: \nUnos podataka za 4. gradjanina\nUnesite ime i prezime (u istom redu): Unesite datum rodjenja(format dd\/mm\/gggg): Unesite sifru regije: Unesite M za musko, Z za zensko: Ime i prezime: Mickey Mouse, JMBG: 1612994170006\n\nUnos podataka za 5. gradjanina\nUnesite ime i prezime (u istom redu): Unesite datum rodjenja(format dd\/mm\/gggg): Unesite sifru regije: Unesite M za musko, Z za zensko: Ime i prezime: Minnie Mouse, JMBG: 1412994185004\n\nUnos podataka za 6. gradjanina\nUnesite ime i prezime (u istom redu): Unesite datum rodjenja(format dd\/mm\/gggg): Unesite sifru regije: Unesite M za musko, Z za zensko: Neispravni podaci\n\nUnos podataka za 6. gradjanina\nUnesite ime i prezime (u istom redu): Unesite datum rodjenja(format dd\/mm\/gggg): Unesite sifru regije: Unesite M za musko, Z za zensko: Ime i prezime: Donald Fauntleroy Duck, JMBG: 1212992170000\n"
+                ]
+            },
+            "debug": [],
+            "profile[memcheck]": {
+                "environment": {
+                    "stdin": "3\nRambo Sulejmanovic\n3005017180005\nZan Klod Sejdic\n2905017170007\nCak Noris Bicakcic\n1234567891234\nLima Zulu\n1612994175008\n3\nMickey Mouse\n16\/12\/1994\n17\nM\nMinnie Mouse\n14\/12\/1994\n18\nZ\nDonald Fauntleroy Duck\n12\/14\/1992\n17\nM\nDonald Fauntleroy Duck\n12\/12\/1992\n17\nM\n"
+                }
+            },
+            "profile[sgcheck]": {
+                "environment": {
+                    "stdin": "3\nRambo Sulejmanovic\n3005017180005\nZan Klod Sejdic\n2905017170007\nCak Noris Bicakcic\n1234567891234\nLima Zulu\n1612994175008\n3\nMickey Mouse\n16\/12\/1994\n17\nM\nMinnie Mouse\n14\/12\/1994\n18\nZ\nDonald Fauntleroy Duck\n12\/14\/1992\n17\nM\nDonald Fauntleroy Duck\n12\/12\/1992\n17\nM\n"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp: In member function ‘void Trougao::Skaliraj(Tacka, double)’:
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:186:15: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+         if(k==0) throw std::domain_error("Nekorektan faktor skaliranja");
+               ^
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp: In function ‘bool DaLiSuIdenticni(Trougao, Trougao)’:
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:237:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+         if(std::fabs(a2.first-b2.first) && std::fabs(a2.second-b2.second)<0.0001) {
+                                                                           ^~~~~~
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:237:75: warning: comparing floating point with == or != is unsafe [-Wfloat-equal]
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp: In function ‘bool DaLiSuPodudarni(Trougao, Trougao)’:
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:263:12: warning: unused variable ‘u1’ [-Wunused-variable]
+     double u1=t1.DajUgao(1);
+            ^~
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:264:12: warning: unused variable ‘u2’ [-Wunused-variable]
+     double u2=t1.DajUgao(2);
+            ^~
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:265:12: warning: unused variable ‘u3’ [-Wunused-variable]
+     double u3=t1.DajUgao(3);
+            ^~
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:266:12: warning: unused variable ‘v1’ [-Wunused-variable]
+     double v1=t2.DajUgao(1);
+            ^~
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:267:12: warning: unused variable ‘v2’ [-Wunused-variable]
+     double v2=t2.DajUgao(2);
+            ^~
+/rhome/j/jhasanovic1/workspace/TP/Z4/Z1/main.cpp:268:12: warning: unused variable ‘v3’ [-Wunused-variable]
+     double v3=t2.DajUgao(3);
+            ^~
